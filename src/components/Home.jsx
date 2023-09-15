@@ -129,11 +129,11 @@ const Home = () => {
             h={'fit-content'}
             mb={'15px'}
             fontWeight={['bold', 'extrabold']}
-            p={'8px 14px'}
+            p={'7px 13px'}
             letterSpacing={['wide', 'wider', 'widest']}
             color={'white'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
-            fontSize={['14px', '16px', '18px', '20px']}
+            fontSize={['12px', '14px', '16px', '18px']}
             background={
               'linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%)'
             }
@@ -312,7 +312,7 @@ const Home = () => {
             display={'inline-flex'}
             color={'white'}
             letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['10px', '10px', '15px', '20px']}
+            padding={['8px', '8px', '13px', '18px']}
             px={['10px', '15px', '20px', '50px', '50px', '70px']}
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
@@ -331,7 +331,7 @@ const Home = () => {
             display={'inline-flex'}
             color={'white'}
             letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['10px', '10px', '15px', '20px']}
+            padding={['8px', '8px', '13px', '18px']}
             fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
@@ -350,7 +350,7 @@ const Home = () => {
             display={'inline-flex'}
             color={'white'}
             letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['10px', '10px', '15px', '20px']}
+            padding={['8px', '8px', '13px', '18px']}
             fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
@@ -521,8 +521,8 @@ const Project = ({ name, url, img, repourl }) => {
           className="projectimg"
           fit={'cover'}
           borderRadius={'10px'}
-          w={['350px', '350px', '350px', '450px', '500px']}
-          h={['200px', '200px', '200px', '270px', '320px']}
+          w={['350px', '350px', '350px', '370px', '400px']}
+          h={['200px', '200px', '200px', '270px', '300px']}
           src={img}
           alt="project"
         />
