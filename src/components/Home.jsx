@@ -142,7 +142,7 @@ const Home = () => {
           </Box>
           <Box
             alignSelf={'flex-start'}
-            fontSize={['2xl', '4xl', '4xl', '6xl']}
+            fontSize={['xl', '2xl', '2xl', '4xl']}
             fontWeight={'extrabold'}
             color={'white'}
             fontFamily={'cursive'}
