@@ -49,7 +49,6 @@ const Header = () => {
         <HashLink to={'#home'} style={{ textDecoration: 'none' }}>
           <Heading
             size={['sm', 'md', 'md', 'lg']}
-            fontFamily={'cursive'}
             color={'white'}
           >
             SANSKAR MODI
