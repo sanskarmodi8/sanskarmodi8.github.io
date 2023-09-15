@@ -31,16 +31,16 @@ import footerimg from '../assets/img/footer-bg.webp';
 
 const Home = () => {
   const skills = [
-    { name: 'Python', value: 95, bool: false },
-    { name: 'Git', value: 85, bool: false },
-    { name: 'Linux', value: 88, bool: false },
+    { name: 'Python', value: 90, bool: false },
+    { name: 'Git', value: 80, bool: false },
+    { name: 'Linux', value: 85, bool: false },
     { name: 'ReactJS', value: 90, bool: false },
-    { name: 'Numpy', value: 92, bool: false },
+    { name: 'Numpy', value: 90, bool: false },
     { name: 'JavaScript', value: 80, bool: false },
     { name: 'Flask', value: 90, bool: false },
-    { name: 'Pandas', value: 95, bool: false },
+    { name: 'Pandas', value: 90, bool: false },
     { name: 'Seaborn', value: 90, bool: false },
-    { name: 'Scikit Learn', value: 92, bool: false },
+    { name: 'Scikit Learn', value: 85, bool: false },
     { name: 'Tensorflow', value: '', bool: true },
     { name: 'Keras', value: '', bool: true },
     { name: 'OpenCV', value: '', bool: true },
