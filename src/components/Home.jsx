@@ -142,7 +142,7 @@ const Home = () => {
           </Box>
           <Box
             alignSelf={'flex-start'}
-            fontSize={['xl', '2xl', '2xl', '4xl']}
+            fontSize={['xl', '2xl', '2xl', '5xl']}
             fontWeight={'extrabold'}
             color={'white'}
             fontFamily={'cursive'}
@@ -521,7 +521,7 @@ const Project = ({ name, url, img, repourl }) => {
           className="projectimg"
           fit={'cover'}
           borderRadius={'10px'}
-          w={['350px', '350px', '350px', '370px', '400px']}
+          w={['350px', '350px', '350px', '370px', '420px']}
           h={['200px', '200px', '200px', '270px', '300px']}
           src={img}
           alt="project"
