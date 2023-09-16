@@ -521,8 +521,8 @@ const Project = ({ name, url, img, repourl }) => {
           className="projectimg"
           fit={'cover'}
           borderRadius={'10px'}
-          w={['350px', '350px', '350px', '370px', '390px']}
-          h={['200px', '200px', '200px', '250px', '270px']}
+          w={['350px', '350px', '350px', '370px', '420px']}
+          h={['200px', '200px', '200px', '220px', '270px']}
           src={img}
           alt="project"
         />
