@@ -513,7 +513,7 @@ const Project = ({ name, url, img, repourl }) => {
     <>
       <Box
         h={'fit-content'}
-        mt={'10px'}
+        mt={['20px', '30px', '30px', '40px']}
         w={'fit-content'}
         position={'relative'}
       >
