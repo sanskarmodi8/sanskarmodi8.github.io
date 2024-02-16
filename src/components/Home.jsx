@@ -173,7 +173,7 @@ const Home = () => {
               multiText={[
                 "Hi! I'm Sanskar, a Data Scientist,",
                 "Hi! I'm Sanskar, an ML Engineer,",
-                "I Love AI.,",
+                "I Love AI.",
               ]}
               multiTextDelay={1500}
               typeSpeed={69}
@@ -544,17 +544,17 @@ const Project = ({ name, url, img, repourl }) => {
         <VStack
           pos={'absolute'}
           borderRadius={'10px'}
-          _hover={{ opacity: '0.95' , background : 'linear-gradient(90.21deg, mediumpurple -5.91%, mediumpurple 111.58%)'}}
+          _hover={{ opacity: '0.95' , background : 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'}}
           top={0}
           bottom={0}
           left={0}
           right={0}
-          opacity={0.7}
+          opacity={0.8}
           transition={'0.3s ease-in-out'}
           justifyContent={'center'}
           alignItems={'center'}
           background={
-            'linear-gradient(90.21deg, mediumpurple -5.91%, mediumpurple 111.58%)'
+            'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
           }
         >
           <Text p={'5px'} fontSize={"2xl"} color={'white'} as={'h2'} fontWeight={"extrabold"}>{`${name}`}</Text>
