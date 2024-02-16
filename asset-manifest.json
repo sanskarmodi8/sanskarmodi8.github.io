@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.bfead8aa.js",
+    "main.js": "/static/js/main.da87e3b2.js",
     "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
     "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/diamond_price_pred.webp": "/static/media/diamond_price_pred.1bb54b13a8ebeff98f18.webp",
@@ -14,9 +14,9 @@
     "static/media/mnist_digits_generation.webp": "/static/media/mnist_digits_generation.603175c7ba8dfec28f84.webp",
     "static/media/footer-bg.webp": "/static/media/footer-bg.6739f2f7a7ab61e22251.webp",
     "index.html": "/index.html",
-    "main.bfead8aa.js.map": "/static/js/main.bfead8aa.js.map"
+    "main.da87e3b2.js.map": "/static/js/main.da87e3b2.js.map"
   },
   "entrypoints": [
-    "static/js/main.bfead8aa.js"
+    "static/js/main.da87e3b2.js"
   ]
 }
