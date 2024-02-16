@@ -84,7 +84,7 @@ const Home = () => {
         'https://github.com/sanskarmodi8/DigitClassification',
     },
     {
-      name: 'Fashion MNIST images Generator',
+      name: 'Fashion MNIST Generator',
       url: '',
       img: fashion_mnist_generation,
       repourl:
@@ -173,7 +173,7 @@ const Home = () => {
               multiText={[
                 "Hi! I'm Sanskar, a Data Scientist,",
                 "Hi! I'm Sanskar, an ML Engineer,",
-                "I also have experience in ReactJS,",
+                "I Love AI.,",
               ]}
               multiTextDelay={1500}
               typeSpeed={69}
