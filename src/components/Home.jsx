@@ -335,7 +335,7 @@ const Home = () => {
             onClick={() => setActiveTab('basic')}
             cursor={'pointer'}
           >
-            Without MLOPS
+            Basic (no MLOPS)
           </Box>
           <Box
             background={
@@ -354,7 +354,7 @@ const Home = () => {
             onClick={() => setActiveTab('adv')}
             cursor={'pointer'}
           >
-            With MLOPS
+            Adv (with MLOPS)
           </Box>
           <Box
             background={
@@ -390,9 +390,9 @@ const Home = () => {
           lineHeight={'1.5em'}
         >
           {activeTab === 'adv'
-            ? `End to End Projects using MLOPS.`
+            ? `End to End Advanced Projects using MLOPS.`
             : activeTab === 'basic'
-            ? `Projects without MLOPS.`
+            ? `Basic projects (without MLOPS).`
             : `Open source projects I have actively contributed to.`}
         </Box>
         <HStack
@@ -536,8 +536,8 @@ const Project = ({ name, url, img, repourl }) => {
           className="projectimg"
           fit={'fit'}
           borderRadius={'10px'}
-          w={['350px', '350px', '350px', '370px', '420px']}
-          h={['200px', '200px', '200px', '220px', '270px']}
+          w={['345px', '345px', '345px', '370px', '420px']}
+          h={['195px', '195px', '195px', '220px', '270px']}
           src={img}
           alt="project"
         />
@@ -557,7 +557,7 @@ const Project = ({ name, url, img, repourl }) => {
             'linear-gradient(90.21deg, #9370db -5.91%, #9370db 111.58%)'
           }
         >
-          <Text p={'5px'} fontSize={"xl"} color={'white'} as={'h2'} fontWeight={"extrabold"}>{`${name}`}</Text>
+          <Text p={'5px'} fontSize={"lg"} color={'white'} as={'h2'} fontWeight={"extrabold"}>{`${name}`}</Text>
           <Box display={'flex'}>
             {url!=="" ? (<a href={url} target="blank">
             
@@ -584,6 +584,8 @@ const Project = ({ name, url, img, repourl }) => {
                 className="github"
               >
                 <FiGithub color="white" size={'1.2em'} />
+                
+
               </Box>
             </a>
           </Box>
