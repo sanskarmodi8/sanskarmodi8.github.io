@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.js": "/static/js/main.8255f887.js",
+    "main.js": "/static/js/main.9c61aea4.js",
     "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
     "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
-    "static/media/diceroll.webp": "/static/media/diceroll.23475475e8e5fc72f5a4.webp",
-    "static/media/FlipkartReviewScraper.webp": "/static/media/FlipkartReviewScraper.c6d69ea0c3e3c9cbd6b3.webp",
-    "static/media/portfolio.webp": "/static/media/portfolio.aa8d8e733debe5169663.webp",
-    "static/media/xcrypto.webp": "/static/media/xcrypto.674100fa81a6617fc79a.webp",
-    "static/media/techystar.webp": "/static/media/techystar.b1e41f614b3b9c90b47e.webp",
-    "static/media/videohub.webp": "/static/media/videohub.e9fb005e59ef992062b1.webp",
-    "static/media/todo.webp": "/static/media/todo.794ec7d49a5d63f369ad.webp",
+    "static/media/diamond_price_pred.webp": "/static/media/diamond_price_pred.1bb54b13a8ebeff98f18.webp",
+    "static/media/deep_learning_cars.webp": "/static/media/deep_learning_cars.8b2f8ff17400bc6a9d19.webp",
+    "static/media/virtual_painter.webp": "/static/media/virtual_painter.e7bbcc0796d4fdabc8d8.webp",
+    "static/media/fashion_mnist_generation.webp": "/static/media/fashion_mnist_generation.7d2f60742a56c9e0f6d0.webp",
+    "static/media/car_counter.webp": "/static/media/car_counter.a7fa85eb5697012372d2.webp",
+    "static/media/gesture_volume_control.webp": "/static/media/gesture_volume_control.f5e82e855dfb30b1c88b.webp",
+    "static/media/attendance_system.webp": "/static/media/attendance_system.7e1228e0d3c81c109bc6.webp",
+    "static/media/digit_classification.webp": "/static/media/digit_classification.431808f64b3b62ab97c9.webp",
+    "static/media/mnist_digits_generation.webp": "/static/media/mnist_digits_generation.603175c7ba8dfec28f84.webp",
     "static/media/footer-bg.webp": "/static/media/footer-bg.6739f2f7a7ab61e22251.webp",
     "index.html": "/index.html",
-    "main.8255f887.js.map": "/static/js/main.8255f887.js.map"
+    "main.9c61aea4.js.map": "/static/js/main.9c61aea4.js.map"
   },
   "entrypoints": [
-    "static/js/main.8255f887.js"
+    "static/js/main.9c61aea4.js"
   ]
 }
