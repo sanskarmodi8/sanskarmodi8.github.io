@@ -162,7 +162,7 @@ const Home = () => {
             fontSize={['xl', '2xl', '2xl', '5xl']}
             fontWeight={'extrabold'}
             color={'white'}
-            fontFamily={'cursive'}
+            fontFamily={"heading"}
             display={'flex'}
             w={'fit-content'}
             h={'fit-content'}
@@ -192,8 +192,8 @@ const Home = () => {
             alignSelf={'flex-start'}
             lineHeight={['1.3em', '1.5em', '1.5em', '1.7em']}
           >
-            As a person interested in AI and ML, I look forward for creating impactful solutions and
-            I love contributing to the Open Source and global tech community. I thrive on challenges
+            As a person interested in AI and ML, I look forward for creating impactful solutions.
+            I love contributing to the Open Source, I thrive on challenges
             and embrace continuous learning.
           </Box>
           <Box
@@ -268,7 +268,7 @@ const Home = () => {
           color={'white'}
           fontSize={['25px', '30px', '40px']}
           fontWeight={'bold'}
-          fontFamily={'cursive'}
+          fontFamily={'heading'}
           w={'fit-content'}
           h={'fit-content'}
           my={'20px'}
@@ -309,7 +309,7 @@ const Home = () => {
           color={'white'}
           fontSize={['25px', '30px', '40px']}
           fontWeight={'bold'}
-          fontFamily={'cursive'}
+          fontFamily={'heading'}
           w={'fit-content'}
           h={'fit-content'}
           pb={'40px'}
@@ -549,7 +549,7 @@ const Project = ({ name, url, img, repourl }) => {
           bottom={0}
           left={0}
           right={0}
-          opacity={0.5}
+          opacity={0.7}
           transition={'0.3s ease-in-out'}
           justifyContent={'center'}
           alignItems={'center'}
@@ -557,21 +557,22 @@ const Project = ({ name, url, img, repourl }) => {
             'linear-gradient(90.21deg, mediumpurple -5.91%, mediumpurple 111.58%)'
           }
         >
-          <Text p={'5px'} fontSize={"xl"} color={'white'} as={'h2'} fontWeight={"extrabold"}>{`${name}`}</Text>
+          <Text p={'5px'} fontSize={"2xl"} color={'white'} as={'h2'} fontWeight={"extrabold"}>{`${name}`}</Text>
           <Box display={'flex'}>
-            <a href={`${url}`} target="blank">
-              <Box
-                bgColor={'#282828'}
-                padding={'13px'}
-                border={'1px solid white'}
-                borderRadius={'100%'}
-                mr={'10'}
-                _hover={{ bgColor: 'black' }}
-                transition={'0.3s ease-in-out'}
-              >
-                <FaPlay color="white" size={'1em'} />
-              </Box>
-            </a>
+            {url!=="" ? (<a href={url} target="blank">
+            
+            <Box
+              bgColor={'#282828'}
+              padding={'13px'}
+              border={'1px solid white'}
+              borderRadius={'100%'}
+              mr={'10'}
+              _hover={{ bgColor: 'black' }}
+              transition={'0.3s ease-in-out'}
+            >
+              <FaPlay color="white" size={'1em'} />
+            </Box>
+          </a>) : <></>}
             <a href={`${repourl}`} target="blank">
               <Box
                 bgColor={'#282828'}
