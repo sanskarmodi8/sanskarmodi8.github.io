@@ -61,7 +61,7 @@ const Home = () => {
     },
     {
       name: 'Diamond Price Prediction',
-      url: 'https://kidneydiseaseclassification.azurewebsites.net/',
+      url: 'https://sanskarmodi8.github.io/Diamond_Price_Pred/',
       img: diamond_price_pred,
       repourl: 'https://github.com/sanskarmodi8/Diamond_Price_Pred',
     },
