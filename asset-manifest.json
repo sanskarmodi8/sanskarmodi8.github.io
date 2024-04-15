@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.fdd1be32.js",
+    "main.js": "/static/js/main.4310f9f9.js",
+    "static/media/network.png": "/static/media/network.e74f3c6cb0dc0de7fe28.png",
     "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
     "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/diamond_price_pred.webp": "/static/media/diamond_price_pred.1bb54b13a8ebeff98f18.webp",
+    "static/media/kidney.png": "/static/media/kidney.9569901ba75dba66646a.png",
     "static/media/deep_learning_cars.webp": "/static/media/deep_learning_cars.8b2f8ff17400bc6a9d19.webp",
     "static/media/virtual_painter.webp": "/static/media/virtual_painter.e7bbcc0796d4fdabc8d8.webp",
     "static/media/fashion_mnist_generation.webp": "/static/media/fashion_mnist_generation.7d2f60742a56c9e0f6d0.webp",
@@ -14,9 +16,9 @@
     "static/media/mnist_digits_generation.webp": "/static/media/mnist_digits_generation.603175c7ba8dfec28f84.webp",
     "static/media/footer-bg.webp": "/static/media/footer-bg.6739f2f7a7ab61e22251.webp",
     "index.html": "/index.html",
-    "main.fdd1be32.js.map": "/static/js/main.fdd1be32.js.map"
+    "main.4310f9f9.js.map": "/static/js/main.4310f9f9.js.map"
   },
   "entrypoints": [
-    "static/js/main.fdd1be32.js"
+    "static/js/main.4310f9f9.js"
   ]
 }
