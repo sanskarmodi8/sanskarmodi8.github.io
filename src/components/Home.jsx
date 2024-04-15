@@ -30,12 +30,14 @@ import fashion_mnist_generation from '../assets/img/fashion_mnist_generation.web
 import gesture_volume_control from '../assets/img/gesture_volume_control.webp';
 import mnist_digits_generation from '../assets/img/mnist_digits_generation.webp';
 import virtual_painter from '../assets/img/virtual_painter.webp';
+import kidney from '../assets/img/kidney.png';
+import network from '../assets/img/network.png';
 
 const Home = () => {
   const skills = [
     { name: 'Python', value: 90, bool: false },
-    { name: 'Dockers', value: '', bool: true },
-    { name: 'ReactJS', value: 90, bool: false },
+    { name: 'Dockers', value: 90, bool: false },
+    { name: 'ReactJS', value: 80, bool: false },
     { name: 'C++', value: '', bool: true },
     { name: 'JavaScript', value: 80, bool: false },
     { name: 'Flask', value: 90, bool: false },
@@ -43,11 +45,25 @@ const Home = () => {
     { name: 'Scikit-Learn', value: 90, bool: false },
     { name: 'Tensorflow', value: 90, bool: false },
     { name: 'OpenCV', value: 90, bool: false },
-    { name: 'Kubeflow', value: '', bool: true },
+    { name: 'MLFLOW', value: 90, bool: false },
+    { name: 'DVC', value: 90, bool: false },
+    { name: 'PyTorch', value: '', bool: true },
     { name: 'Hugging Face', value: '', bool: true },
-    
+    { name: 'Langchain', value: '', bool: true },
   ];
   const tab1_projects = [
+    {
+      name: 'Kidney Disease Classification',
+      url: 'https://kidneydiseaseclassification.azurewebsites.net/',
+      img: kidney,
+      repourl: 'https://github.com/sanskarmodi8/kidney_disease_classification',
+    },
+    {
+      name: 'Network Intrusion Detection',
+      url: 'https://networkintrusiondetection.azurewebsites.net/',
+      img: network,
+      repourl: 'https://github.com/sanskarmodi8/network_intrusion_detection',
+    },
     {
       name: 'Attendance System',
       url: '',
@@ -59,30 +75,43 @@ const Home = () => {
       name: 'Car Counter',
       url: '',
       img: car_counter,
-      repourl:
-        'https://github.com/sanskarmodi8/Car_Counter_YOLOv8',
+      repourl: 'https://github.com/sanskarmodi8/Car_Counter_YOLOv8',
     },
     {
       name: 'DL Self Driving Cars',
       url: 'https://sanskarmodi8.github.io/js_deep_learning_cars/',
       img: deep_learning_cars,
-      repourl:
-        'https://github.com/sanskarmodi8/js_deep_learning_cars',
+      repourl: 'https://github.com/sanskarmodi8/js_deep_learning_cars',
     },
     {
       name: 'Diamond Price Prediction',
       url: '',
       img: diamond_price_pred,
-      repourl:
-        'https://github.com/sanskarmodi8/Diamond_Price_Pred',
+      repourl: 'https://github.com/sanskarmodi8/Diamond_Price_Pred',
     },
     {
       name: 'Digit Classifier',
       url: '',
       img: digit_classification,
-      repourl:
-        'https://github.com/sanskarmodi8/DigitClassification',
+      repourl: 'https://github.com/sanskarmodi8/DigitClassification',
     },
+
+    {
+      name: 'Gesture Volume Control',
+      url: '',
+      img: gesture_volume_control,
+      repourl: 'https://github.com/sanskarmodi8/gesture_volume_control',
+    },
+
+    {
+      name: 'Virtual Painter',
+      url: '',
+      img: virtual_painter,
+      repourl: 'https://github.com/sanskarmodi8/Virtual_Painter',
+    },
+  ];
+  const tab3_projects = [];
+  const tab2_projects = [
     {
       name: 'Fashion MNIST Generator',
       url: '',
@@ -91,35 +120,18 @@ const Home = () => {
         'https://github.com/sanskarmodi8/FashionMnistImagesGeneration_GAN',
     },
     {
-      name: 'Gesture Volume Control',
-      url: '',
-      img: gesture_volume_control,
-      repourl:
-        'https://github.com/sanskarmodi8/gesture_volume_control',
-    },
-    {
       name: 'MNIST Digits Generator',
       url: '',
       img: mnist_digits_generation,
-      repourl:
-        'https://github.com/sanskarmodi8/MnistDigitsGeneration_GAN',
-    },
-    {
-      name: 'Virtual Painter',
-      url: '',
-      img: virtual_painter,
-      repourl:
-        'https://github.com/sanskarmodi8/Virtual_Painter',
+      repourl: 'https://github.com/sanskarmodi8/MnistDigitsGeneration_GAN',
     },
   ];
-  const tab3_projects = [];
-  const tab2_projects = [];
 
-  const [activeTab, setActiveTab] = useState('basic');
+  const [activeTab, setActiveTab] = useState('ml');
   return (
     <Box
       w={'full'}
-      h='fit-content'
+      h="fit-content"
       backgroundImage={banner}
       bgColor={'black'}
       pt={['14vh', '16vh', '18vh', '20vh']}
@@ -162,7 +174,7 @@ const Home = () => {
             fontSize={['xl', '2xl', '2xl', '5xl']}
             fontWeight={'extrabold'}
             color={'white'}
-            fontFamily={"heading"}
+            fontFamily={'heading'}
             display={'flex'}
             w={'fit-content'}
             h={'fit-content'}
@@ -170,11 +182,7 @@ const Home = () => {
             <TypeWriterEffect
               startDelay={100}
               cursorColor="white"
-              multiText={[
-                "Hi! I'm Sanskar, a Data Scientist,",
-                "Hi! I'm Sanskar, an ML Engineer,",
-                "I Love AI.",
-              ]}
+              multiText={["Hi! I'm Sanskar, an ML Engineer,", 'I Love AI.']}
               multiTextDelay={1500}
               typeSpeed={69}
               multiTextLoop
@@ -192,9 +200,9 @@ const Home = () => {
             alignSelf={'flex-start'}
             lineHeight={['1.3em', '1.5em', '1.5em', '1.7em']}
           >
-            As a person interested in AI and ML, I look forward for creating impactful solutions.
-            I love contributing to the Open Source, I thrive on challenges
-            and embrace continuous learning.
+            As a person interested in AI and ML, I look forward for creating
+            impactful solutions. I love contributing to the Open Source, I
+            thrive on challenges and embrace continuous learning.
           </Box>
           <Box
             display={'flex'}
@@ -289,7 +297,7 @@ const Home = () => {
         >
           These are the skills I currently acquire and working on.
         </Box>
-        <HStack pb={"25px"} wrap={'wrap'} justifyContent={'space-evenly'}>
+        <HStack pb={'25px'} wrap={'wrap'} justifyContent={'space-evenly'}>
           {skills.map(i => (
             <Skill name={i.name} value={i.value} bool={i.bool} />
           ))}
@@ -319,7 +327,7 @@ const Home = () => {
         <Box h={'fit-content'} w={'fit-content'}>
           <Box
             background={
-              activeTab === 'basic'
+              activeTab === 'ml'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
             }
@@ -332,14 +340,14 @@ const Home = () => {
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
             borderRadius={'64px 0 0 64px'}
-            onClick={() => setActiveTab('basic')}
+            onClick={() => setActiveTab('ml')}
             cursor={'pointer'}
           >
-            Basic (no MLOPS)
+            Machine Learning
           </Box>
           <Box
             background={
-              activeTab === 'adv'
+              activeTab === 'genai'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
             }
@@ -351,14 +359,14 @@ const Home = () => {
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('adv')}
+            onClick={() => setActiveTab('genai')}
             cursor={'pointer'}
           >
-            Adv (with MLOPS)
+            Generative AI
           </Box>
           <Box
             background={
-              activeTab === 'os'
+              activeTab === 'mm'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
             }
@@ -370,33 +378,33 @@ const Home = () => {
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('os')}
+            onClick={() => setActiveTab('mm')}
             borderRadius={'0 64px 64px 0'}
             cursor={'pointer'}
           >
-            Open Source
+            MultiModal
           </Box>
         </Box>
         <Box
           w={'fit-content'}
           h={'fit-content'}
+          className="aboutskillsnprojects"
           pt={'70px'}
           display={'flex'}
           color={'#B8B8B8'}
           textAlign={'center'}
-          className="aboutskillsnprojects"
           fontSize={['xs', 'sm', 'sm', 'md', 'md']}
           letterSpacing={'widest'}
           lineHeight={'1.5em'}
         >
-          {activeTab === 'adv'
-            ? `End to End Advanced Projects using MLOPS.`
-            : activeTab === 'basic'
-            ? `Basic projects (without MLOPS).`
-            : `Open source projects I have actively contributed to.`}
+          {activeTab === 'genai'
+            ? `Generative AI Projects using GAN, Langchains etc.`
+            : activeTab === 'ml'
+            ? `Projects using ML, DL, CV and NLP.`
+            : `Projects that combining various techniques like ML, DL and Generative AI.`}
         </Box>
         <HStack
-          display={activeTab === 'adv' ? 'inherit' : 'none'}
+          display={activeTab === 'genai' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
@@ -411,7 +419,7 @@ const Home = () => {
           ))}
         </HStack>
         <HStack
-          display={activeTab === 'basic' ? 'inherit' : 'none'}
+          display={activeTab === 'ml' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
@@ -426,7 +434,7 @@ const Home = () => {
           ))}
         </HStack>
         <HStack
-          display={activeTab === 'os' ? 'inherit' : 'none'}
+          display={activeTab === 'mm' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
@@ -541,15 +549,29 @@ const Project = ({ name, url, img, repourl }) => {
           src={img}
           alt="project"
         />
+        <Text
+        py={"10px"}
+          color={'#B8B8B8'}
+          textAlign={'center'}
+          fontSize={['xs', 'sm', 'sm', 'md', 'md']}
+          letterSpacing={'widest'}
+          lineHeight={'1.5em'}
+        >
+          {name}
+        </Text>
         <VStack
           pos={'absolute'}
           borderRadius={'10px'}
-          _hover={{ opacity: '0.95' , background : 'linear-gradient(90.21deg, #9370db -5.91%, #9370db 111.58%)'}}
+          _hover={{
+            opacity: '0.95',
+            background:
+              'linear-gradient(90.21deg, #9370db -5.91%, #9370db 111.58%)',
+          }}
           top={0}
           bottom={0}
           left={0}
           right={0}
-          opacity={0.7}
+          opacity={0}
           transition={'0.3s ease-in-out'}
           justifyContent={'center'}
           alignItems={'center'}
@@ -557,22 +579,31 @@ const Project = ({ name, url, img, repourl }) => {
             'linear-gradient(90.21deg, #9370db -5.91%, #9370db 111.58%)'
           }
         >
-          <Text p={'5px'} fontSize={"lg"} color={'white'} as={'h2'} fontWeight={"extrabold"}>{`${name}`}</Text>
+          <Text
+            p={'5px'}
+            fontSize={'lg'}
+            color={'white'}
+            as={'h2'}
+            fontWeight={'extrabold'}
+          >{`${name}`}</Text>
           <Box display={'flex'}>
-            {url!=="" ? (<a href={url} target="blank">
-            
-            <Box
-              bgColor={'#282828'}
-              padding={'13px'}
-              border={'1px solid white'}
-              borderRadius={'100%'}
-              mr={'10'}
-              _hover={{ bgColor: 'black' }}
-              transition={'0.3s ease-in-out'}
-            >
-              <FaPlay color="white" size={'1em'} />
-            </Box>
-          </a>) : <></>}
+            {url !== '' ? (
+              <a href={url} target="blank">
+                <Box
+                  bgColor={'#282828'}
+                  padding={'13px'}
+                  border={'1px solid white'}
+                  borderRadius={'100%'}
+                  mr={'10'}
+                  _hover={{ bgColor: 'black' }}
+                  transition={'0.3s ease-in-out'}
+                >
+                  <FaPlay color="white" size={'1em'} />
+                </Box>
+              </a>
+            ) : (
+              <></>
+            )}
             <a href={`${repourl}`} target="blank">
               <Box
                 bgColor={'#282828'}
@@ -584,8 +615,6 @@ const Project = ({ name, url, img, repourl }) => {
                 className="github"
               >
                 <FiGithub color="white" size={'1.2em'} />
-                
-
               </Box>
             </a>
           </Box>
