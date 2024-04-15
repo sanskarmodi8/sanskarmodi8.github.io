@@ -21,15 +21,8 @@ import astronaut from '../assets/img/header-img.svg';
 import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
-import attendance from '../assets/img/attendance_system.webp';
-import car_counter from '../assets/img/car_counter.webp';
-import deep_learning_cars from '../assets/img/deep_learning_cars.webp';
-import diamond_price_pred from '../assets/img/diamond_price_pred.webp';
-import digit_classification from '../assets/img/digit_classification.webp';
-import fashion_mnist_generation from '../assets/img/fashion_mnist_generation.webp';
-import gesture_volume_control from '../assets/img/gesture_volume_control.webp';
-import mnist_digits_generation from '../assets/img/mnist_digits_generation.webp';
-import virtual_painter from '../assets/img/virtual_painter.webp';
+import diamond_price_pred from '../assets/img/diamond.png';
+import mnist_digits_generation from '../assets/img/digit.png';
 import kidney from '../assets/img/kidney.png';
 import network from '../assets/img/network.png';
 
@@ -65,60 +58,14 @@ const Home = () => {
       repourl: 'https://github.com/sanskarmodi8/network_intrusion_detection',
     },
     {
-      name: 'Attendance System',
-      url: '',
-      img: attendance,
-      repourl:
-        'https://github.com/sanskarmodi8/face_recognition_attendance_system',
-    },
-    {
-      name: 'Car Counter',
-      url: '',
-      img: car_counter,
-      repourl: 'https://github.com/sanskarmodi8/Car_Counter_YOLOv8',
-    },
-    {
-      name: 'DL Self Driving Cars',
-      url: 'https://sanskarmodi8.github.io/js_deep_learning_cars/',
-      img: deep_learning_cars,
-      repourl: 'https://github.com/sanskarmodi8/js_deep_learning_cars',
-    },
-    {
       name: 'Diamond Price Prediction',
-      url: '',
+      url: 'https://kidneydiseaseclassification.azurewebsites.net/',
       img: diamond_price_pred,
       repourl: 'https://github.com/sanskarmodi8/Diamond_Price_Pred',
-    },
-    {
-      name: 'Digit Classifier',
-      url: '',
-      img: digit_classification,
-      repourl: 'https://github.com/sanskarmodi8/DigitClassification',
-    },
-
-    {
-      name: 'Gesture Volume Control',
-      url: '',
-      img: gesture_volume_control,
-      repourl: 'https://github.com/sanskarmodi8/gesture_volume_control',
-    },
-
-    {
-      name: 'Virtual Painter',
-      url: '',
-      img: virtual_painter,
-      repourl: 'https://github.com/sanskarmodi8/Virtual_Painter',
     },
   ];
   const tab3_projects = [];
   const tab2_projects = [
-    {
-      name: 'Fashion MNIST Generator',
-      url: '',
-      img: fashion_mnist_generation,
-      repourl:
-        'https://github.com/sanskarmodi8/FashionMnistImagesGeneration_GAN',
-    },
     {
       name: 'MNIST Digits Generator',
       url: '',
@@ -401,7 +348,7 @@ const Home = () => {
             ? `Generative AI Projects using GAN, Langchains etc.`
             : activeTab === 'ml'
             ? `Projects using ML, DL, CV and NLP.`
-            : `Projects that combining various techniques like ML, DL and Generative AI.`}
+            : `Projects combining various techniques like ML, DL and Generative AI.`}
         </Box>
         <HStack
           display={activeTab === 'genai' ? 'inherit' : 'none'}
@@ -533,7 +480,7 @@ const Home = () => {
 };
 const Project = ({ name, url, img, repourl }) => {
   return (
-    <>
+    <VStack>
       <Box
         h={'fit-content'}
         mt={['20px', '30px', '30px', '40px']}
@@ -549,16 +496,7 @@ const Project = ({ name, url, img, repourl }) => {
           src={img}
           alt="project"
         />
-        <Text
-        py={"10px"}
-          color={'#B8B8B8'}
-          textAlign={'center'}
-          fontSize={['xs', 'sm', 'sm', 'md', 'md']}
-          letterSpacing={'widest'}
-          lineHeight={'1.5em'}
-        >
-          {name}
-        </Text>
+
         <VStack
           pos={'absolute'}
           borderRadius={'10px'}
@@ -620,7 +558,17 @@ const Project = ({ name, url, img, repourl }) => {
           </Box>
         </VStack>
       </Box>
-    </>
+      <Text
+        py={'10px'}
+        color={'#B8B8B8'}
+        textAlign={'center'}
+        fontSize={['xs', 'sm', 'sm', 'md', 'md']}
+        letterSpacing={'widest'}
+        lineHeight={'1.5em'}
+      >
+        {name}
+      </Text>
+    </VStack>
   );
 };
 const Skill = ({ name, value, bool }) => {
