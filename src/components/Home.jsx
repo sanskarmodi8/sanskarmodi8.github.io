@@ -43,6 +43,8 @@ const Home = () => {
     { name: 'PyTorch', value: '', bool: true },
     { name: 'Hugging Face', value: '', bool: true },
     { name: 'Langchain', value: '', bool: true },
+    { name: 'Gradio' , value: '' , bool: true},
+    { name: 'Streamlit' , value: '' , bool: true},
   ];
   const tab1_projects = [
     {
