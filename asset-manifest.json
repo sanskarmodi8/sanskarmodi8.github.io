@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.c4effbb9.js",
-    "static/media/diamond.png": "/static/media/diamond.10ca050dba81083b6da7.png",
-    "static/media/digit.png": "/static/media/digit.f0d5fcb8d9aa6802aacb.png",
-    "static/media/network.png": "/static/media/network.e74f3c6cb0dc0de7fe28.png",
-    "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
+    "main.js": "/static/js/main.ed70392a.js",
+    "static/media/network.webp": "/static/media/network.77d5f8bba7e83fd415f7.webp",
     "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
-    "static/media/kidney.png": "/static/media/kidney.9569901ba75dba66646a.png",
+    "static/media/diamond.webp": "/static/media/diamond.853ce3fb07947207be7b.webp",
+    "static/media/digit.webp": "/static/media/digit.f004ab5a84a01b369665.webp",
+    "static/media/banner-bg.webp": "/static/media/banner-bg.5297761ad7c077127d21.webp",
+    "static/media/kidney.webp": "/static/media/kidney.579c5d732b3620421e77.webp",
     "static/media/footer-bg.webp": "/static/media/footer-bg.6739f2f7a7ab61e22251.webp",
     "index.html": "/index.html",
-    "main.c4effbb9.js.map": "/static/js/main.c4effbb9.js.map"
+    "main.ed70392a.js.map": "/static/js/main.ed70392a.js.map"
   },
   "entrypoints": [
-    "static/js/main.c4effbb9.js"
+    "static/js/main.ed70392a.js"
   ]
 }
