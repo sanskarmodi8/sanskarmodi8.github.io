@@ -15,16 +15,16 @@ import { FaPlay } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
 import { FaLinkedinIn } from 'react-icons/fa';
 import React, { useState } from 'react';
-import banner from '../assets/img/banner-bg.png';
+import banner from '../assets/img/banner-bg.webp';
 import { motion } from 'framer-motion';
 import astronaut from '../assets/img/header-img.svg';
 import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
-import diamond_price_pred from '../assets/img/diamond.png';
-import mnist_digits_generation from '../assets/img/digit.png';
-import kidney from '../assets/img/kidney.png';
-import network from '../assets/img/network.png';
+import diamond_price_pred from '../assets/img/diamond.webp';
+import mnist_digits_generation from '../assets/img/digit.webp';
+import kidney from '../assets/img/kidney.webp';
+import network from '../assets/img/network.webp';
 
 const Home = () => {
   const skills = [
