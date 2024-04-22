@@ -25,6 +25,7 @@ import diamond_price_pred from '../assets/img/diamond.webp';
 import mnist_digits_generation from '../assets/img/digit.webp';
 import kidney from '../assets/img/kidney.webp';
 import network from '../assets/img/network.webp';
+import textsumm from '../assets/img/textsumm.webp';
 
 const Home = () => {
   const skills = [
@@ -38,12 +39,12 @@ const Home = () => {
     { name: 'Scikit-Learn', value: 90, bool: false },
     { name: 'Tensorflow', value: 90, bool: false },
     { name: 'OpenCV', value: 90, bool: false },
-    { name: 'MLFLOW', value: 90, bool: false },
+    { name: 'MLFLOW', value: 85, bool: false },
     { name: 'DVC', value: 90, bool: false },
-    { name: 'PyTorch', value: '', bool: true },
-    { name: 'Hugging Face', value: '', bool: true },
+    { name: 'PyTorch', value: 75, bool: false },
+    { name: 'Hugging Face', value: 80, bool: false },
     { name: 'Langchain', value: '', bool: true },
-    { name: 'Gradio' , value: '' , bool: true},
+    { name: 'Gradio' , value: 90 , bool: false},
     { name: 'Streamlit' , value: '' , bool: true},
   ];
   const tab1_projects = [
@@ -64,6 +65,12 @@ const Home = () => {
       url: 'https://sanskarmodi8.github.io/Diamond_Price_Pred/',
       img: diamond_price_pred,
       repourl: 'https://github.com/sanskarmodi8/Diamond_Price_Pred',
+    },
+    {
+      name: 'Text Summarizer',
+      url: 'https://huggingface.co/spaces/SanskarModi/text_summarization',
+      img: textsumm,
+      repourl: 'https://github.com/sanskarmodi8/text_summarization',
     },
   ];
   const tab3_projects = [];
