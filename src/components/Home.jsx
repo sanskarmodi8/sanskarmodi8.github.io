@@ -153,7 +153,12 @@ const Home = () => {
             alignSelf={'flex-start'}
           >
             {/* eslint-disable-next-line */}
-            <a target="blank" style={{ textDecoration: 'none' }}>
+            <a 
+              href="https://drive.google.com/file/d/12fUlMF4trz9mXT8QhhdAK29UO5JJCdEy/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none' }}
+            >
               <Box
                 color={'white'}
                 letterSpacing={'wide'}
