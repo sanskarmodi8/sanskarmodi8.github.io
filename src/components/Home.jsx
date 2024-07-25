@@ -21,67 +21,51 @@ import astronaut from '../assets/img/header-img.svg';
 import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
-import diamond_price_pred from '../assets/img/diamond.webp';
-import mnist_digits_generation from '../assets/img/digit.webp';
 import kidney from '../assets/img/kidney.webp';
-import network from '../assets/img/network.webp';
-import textsumm from '../assets/img/textsumm.webp';
+import mcq from '../assets/img/mcq.webp';
+import mushroom from '../assets/img/mushroom.png';
 
 const Home = () => {
   const skills = [
     { name: 'Python', value: 90, bool: false },
-    { name: 'Dockers', value: 90, bool: false },
+    { name: 'Dockers', value: 80, bool: false },
     { name: 'ReactJS', value: 80, bool: false },
     { name: 'C++', value: '', bool: true },
-    { name: 'JavaScript', value: 80, bool: false },
     { name: 'Flask', value: 90, bool: false },
     { name: 'FastAPI', value: 90, bool: false },
     { name: 'Scikit-Learn', value: 90, bool: false },
     { name: 'Tensorflow', value: 90, bool: false },
-    { name: 'OpenCV', value: 90, bool: false },
+    { name: 'OpenCV', value: 80, bool: false },
     { name: 'MLFLOW', value: 85, bool: false },
     { name: 'DVC', value: 90, bool: false },
-    { name: 'PyTorch', value: 75, bool: false },
+    { name: 'PyTorch', value: 80, bool: false },
     { name: 'Hugging Face', value: 80, bool: false },
-    { name: 'Langchain', value: '', bool: true },
+    { name: 'Langchain', value: '90', bool: false },
     { name: 'Gradio' , value: 90 , bool: false},
-    { name: 'Streamlit' , value: '' , bool: true},
+    { name: 'Streamlit' , value: '80' , bool: false},
   ];
   const tab1_projects = [
     {
       name: 'Kidney Disease Classification',
-      url: 'https://kidneydiseaseclassification.azurewebsites.net/',
+      url: 'https://kidneydisease-classification.streamlit.app/',
       img: kidney,
       repourl: 'https://github.com/sanskarmodi8/kidney_disease_classification',
     },
     {
-      name: 'Network Intrusion Detection',
-      url: 'https://networkintrusiondetection.azurewebsites.net/',
-      img: network,
-      repourl: 'https://github.com/sanskarmodi8/network_intrusion_detection',
+      name: 'MCQ Generator',
+      url: 'https://mcqs-generator.streamlit.app/',
+      img: mcq,
+      repourl: 'https://github.com/sanskarmodi8/mcq_generator',
     },
     {
-      name: 'Diamond Price Prediction',
-      url: 'https://sanskarmodi8.github.io/Diamond_Price_Pred/',
-      img: diamond_price_pred,
-      repourl: 'https://github.com/sanskarmodi8/Diamond_Price_Pred',
-    },
-    {
-      name: 'Text Summarizer',
-      url: 'https://huggingface.co/spaces/SanskarModi/text_summarization',
-      img: textsumm,
-      repourl: 'https://github.com/sanskarmodi8/text_summarization',
+      name: 'Mushroom Classification',
+      url: 'https://mushroom-classification.streamlit.app/',
+      img: mushroom,
+      repourl: 'https://github.com/sanskarmodi8/mushroom-classification',
     },
   ];
   const tab3_projects = [];
-  const tab2_projects = [
-    {
-      name: 'MNIST Digits Generator',
-      url: '',
-      img: mnist_digits_generation,
-      repourl: 'https://github.com/sanskarmodi8/MnistDigitsGeneration_GAN',
-    },
-  ];
+  const tab2_projects = [];
 
   const [activeTab, setActiveTab] = useState('ml');
   return (
@@ -299,11 +283,11 @@ const Home = () => {
             onClick={() => setActiveTab('ml')}
             cursor={'pointer'}
           >
-            Machine Learning
+            AI / ML
           </Box>
           <Box
             background={
-              activeTab === 'genai'
+              activeTab === 'cpp'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
             }
@@ -315,14 +299,14 @@ const Home = () => {
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('genai')}
+            onClick={() => setActiveTab('cpp')}
             cursor={'pointer'}
           >
-            Generative AI
+            C++ & DSA
           </Box>
           <Box
             background={
-              activeTab === 'mm'
+              activeTab === 'os'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
             }
@@ -338,7 +322,7 @@ const Home = () => {
             borderRadius={'0 64px 64px 0'}
             cursor={'pointer'}
           >
-            MultiModal
+            Open Source
           </Box>
         </Box>
         <Box
@@ -353,14 +337,14 @@ const Home = () => {
           letterSpacing={'widest'}
           lineHeight={'1.5em'}
         >
-          {activeTab === 'genai'
-            ? `Generative AI Projects using GAN, Langchains etc.`
+          {activeTab === 'cpp'
+            ? `Projects using C++, Data Structures and Algorithms .`
             : activeTab === 'ml'
-            ? `Projects using ML, DL, CV and NLP.`
-            : `Projects combining various techniques like ML, DL and Generative AI.`}
+            ? `Projects using AI, ML etc.`
+            : `Top Open Source projects I have contributed to.`}
         </Box>
         <HStack
-          display={activeTab === 'genai' ? 'inherit' : 'none'}
+          display={activeTab === 'cpp' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
