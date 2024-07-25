@@ -149,7 +149,6 @@ const Home = () => {
             h={'fit-content'}
             p={'10px 0px'}
             mt={'20px'}
-            onClick={() => alert('Sorry, No resume have been uploaded yet!')}
             alignSelf={'flex-start'}
           >
             {/* eslint-disable-next-line */}
