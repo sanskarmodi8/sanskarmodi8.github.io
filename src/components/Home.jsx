@@ -29,7 +29,6 @@ const Home = () => {
   const skills = [
     { name: 'Python', value: 90, bool: false },
     { name: 'Dockers', value: 80, bool: false },
-    { name: 'ReactJS', value: 80, bool: false },
     { name: 'C++', value: '', bool: true },
     { name: 'Flask', value: 90, bool: false },
     { name: 'FastAPI', value: 90, bool: false },
