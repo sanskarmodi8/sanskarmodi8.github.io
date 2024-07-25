@@ -317,7 +317,7 @@ const Home = () => {
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('mm')}
+            onClick={() => setActiveTab('os')}
             borderRadius={'0 64px 64px 0'}
             cursor={'pointer'}
           >
@@ -373,7 +373,7 @@ const Home = () => {
           ))}
         </HStack>
         <HStack
-          display={activeTab === 'mm' ? 'inherit' : 'none'}
+          display={activeTab === 'os' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
