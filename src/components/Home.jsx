@@ -22,7 +22,7 @@ import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
 import kidney from '../assets/img/kidney.webp';
-import mcq from '../assets/img/mcq.webp';
+import mcq from '../assets/img/mcq.png';
 import mushroom from '../assets/img/mushroom.png';
 
 const Home = () => {
