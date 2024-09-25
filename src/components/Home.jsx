@@ -21,7 +21,7 @@ import astronaut from '../assets/img/header-img.svg';
 import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
-import kidney from '../assets/img/kidney.webp';
+import deepdetect from '../assets/img/ddlogo.png';
 import mcq from '../assets/img/mcq.png';
 import mushroom from '../assets/img/mushroom.png';
 
@@ -36,31 +36,31 @@ const Home = () => {
     { name: 'Tensorflow', value: 90, bool: false },
     { name: 'OpenCV', value: 80, bool: false },
     { name: 'MLFLOW', value: 90, bool: false },
-    { name: 'DVC', value: 85, bool: false },
+    { name: 'DVC', value: 90, bool: false },
     { name: 'PyTorch', value: 80, bool: false },
     { name: 'Hugging Face', value: 80, bool: false },
     { name: 'Langchain', value: '90', bool: false },
     { name: 'Gradio' , value: 90 , bool: false},
-    { name: 'Streamlit' , value: '80' , bool: false},
+    { name: 'Streamlit' , value: '85' , bool: false},
   ];
   const tab1_projects = [
     {
-      name: 'Kidney Disease Classification',
-      url: 'https://kidneydisease-classification.streamlit.app/',
-      img: kidney,
-      repourl: 'https://github.com/sanskarmodi8/kidney_disease_classification',
-    },
-    {
-      name: 'MCQ Generator',
-      url: 'https://mcqs-generator.streamlit.app/',
-      img: mcq,
-      repourl: 'https://github.com/sanskarmodi8/mcq_generator',
+      name: 'Deepfake Detection',
+      url: 'https://huggingface.co/spaces/SanskarModi/DeepDetect',
+      img: deepdetect,
+      repourl: 'https://github.com/sanskarmodi8/DeepDetect',
     },
     {
       name: 'Mushroom Classification',
       url: 'https://mushroom-classification.streamlit.app/',
       img: mushroom,
       repourl: 'https://github.com/sanskarmodi8/mushroom-classification',
+    },
+    {
+      name: 'MCQ Generator',
+      url: 'https://mcqs-generator.streamlit.app/',
+      img: mcq,
+      repourl: 'https://github.com/sanskarmodi8/mcq_generator',
     },
   ];
   const tab3_projects = [];
@@ -344,7 +344,7 @@ const Home = () => {
             ? `Projects using C++, Data Structures and Algorithms .`
             : activeTab === 'ml'
             ? `Projects using AI, ML etc.`
-            : `Top Open Source projects I have contributed to.`}
+            : `Top Open Source projects I have significantly contributed to.`}
         </Box>
         <HStack
           display={activeTab === 'cpp' ? 'inherit' : 'none'}
@@ -487,8 +487,8 @@ const Project = ({ name, url, img, repourl }) => {
           className="projectimg"
           fit={'fit'}
           borderRadius={'10px'}
-          w={['345px', '345px', '345px', '370px', '420px']}
-          h={['195px', '195px', '195px', '220px', '270px']}
+          w={['330px', '330px', '330px', '355px', '405px']}
+          h={['220px', '220px', '220px', '245px', '295px']}
           src={img}
           alt="project"
         />
