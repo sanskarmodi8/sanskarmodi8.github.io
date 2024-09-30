@@ -37,6 +37,7 @@ const Home = () => {
     { name: 'OpenCV', value: 80, bool: false },
     { name: 'MLFLOW', value: 90, bool: false },
     { name: 'DVC', value: 90, bool: false },
+    { name: 'ZenML', value: 80, bool: false },
     { name: 'PyTorch', value: 80, bool: false },
     { name: 'Hugging Face', value: 80, bool: false },
     { name: 'Langchain', value: '90', bool: false },
