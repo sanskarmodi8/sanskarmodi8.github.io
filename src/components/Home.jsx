@@ -291,25 +291,6 @@ const Home = () => {
           </Box>
           <Box
             background={
-              activeTab === 'cpp'
-                ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
-                : 'rgb(255 255 255 / 10%)'
-            }
-            display={'inline-flex'}
-            color={'white'}
-            letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['8px', '8px', '13px', '18px']}
-            fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
-            px={['20px', '25px', '30px', '60px', '60px', '80px']}
-            m={'0px'}
-            border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('cpp')}
-            cursor={'pointer'}
-          >
-            C++ & DSA
-          </Box>
-          <Box
-            background={
               activeTab === 'reimpl'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
@@ -323,10 +304,29 @@ const Home = () => {
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
             onClick={() => setActiveTab('reimpl')}
-            borderRadius={'0 64px 64px 0'}
             cursor={'pointer'}
           >
             Reimplementations
+          </Box>
+          <Box
+            background={
+              activeTab === 'cpp'
+                ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
+                : 'rgb(255 255 255 / 10%)'
+            }
+            display={'inline-flex'}
+            color={'white'}
+            letterSpacing={['normal', 'wide', 'wise', 'wider']}
+            padding={['8px', '8px', '13px', '18px']}
+            fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
+            px={['20px', '25px', '30px', '60px', '60px', '80px']}
+            m={'0px'}
+            border={'1px solid rgba(255, 255, 255, 0.5)'}
+            onClick={() => setActiveTab('cpp')}
+            borderRadius={'0 64px 64px 0'}
+            cursor={'pointer'}
+          >
+            C++ & DSA
           </Box>
         </Box>
         <Box
