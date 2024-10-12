@@ -310,7 +310,7 @@ const Home = () => {
           </Box>
           <Box
             background={
-              activeTab === 'os'
+              activeTab === 'reimpl'
                 ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
                 : 'rgb(255 255 255 / 10%)'
             }
@@ -322,11 +322,11 @@ const Home = () => {
             px={['20px', '25px', '30px', '60px', '60px', '80px']}
             m={'0px'}
             border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('os')}
+            onClick={() => setActiveTab('reimpl')}
             borderRadius={'0 64px 64px 0'}
             cursor={'pointer'}
           >
-            Open Source
+            Reimplementations
           </Box>
         </Box>
         <Box
@@ -342,10 +342,10 @@ const Home = () => {
           lineHeight={'1.5em'}
         >
           {activeTab === 'cpp'
-            ? `Projects using C++, Data Structures and Algorithms .`
+            ? `Personal projects using C++, Data Structures and Algorithms .`
             : activeTab === 'ml'
-            ? `Projects using AI, ML etc.`
-            : `Top Open Source projects I have significantly contributed to.`}
+            ? `Personal projects using AI, ML.`
+            : `ML Research papers reimplemented.`}
         </Box>
         <HStack
           display={activeTab === 'cpp' ? 'inherit' : 'none'}
@@ -378,7 +378,7 @@ const Home = () => {
           ))}
         </HStack>
         <HStack
-          display={activeTab === 'os' ? 'inherit' : 'none'}
+          display={activeTab === 'reimpl' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
