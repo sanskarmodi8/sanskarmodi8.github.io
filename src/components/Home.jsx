@@ -22,8 +22,8 @@ import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
 import deepdetect from '../assets/img/ddlogo.png';
-import mcq from '../assets/img/mcq.png';
 import mushroom from '../assets/img/mushroom.png';
+import autoforecast from '../assets/img/autoforecast.png';
 
 const Home = () => {
   const skills = [
@@ -35,14 +35,14 @@ const Home = () => {
     { name: 'Scikit-Learn', value: 90, bool: false },
     { name: 'Tensorflow', value: 90, bool: false },
     { name: 'OpenCV', value: 80, bool: false },
-    { name: 'MLFLOW', value: 90, bool: false },
-    { name: 'DVC', value: 90, bool: false },
+    { name: 'MLFLOW', value: 85, bool: false },
+    { name: 'DVC', value: 85, bool: false },
     { name: 'ZenML', value: 80, bool: false },
     { name: 'PyTorch', value: 80, bool: false },
     { name: 'Hugging Face', value: 80, bool: false },
-    { name: 'Langchain', value: '90', bool: false },
+    { name: 'Langchain', value: 90, bool: false },
     { name: 'Gradio' , value: 90 , bool: false},
-    { name: 'Streamlit' , value: '85' , bool: false},
+    { name: 'Streamlit' , value: 90 , bool: false},
   ];
   const tab1_projects = [
     {
@@ -52,16 +52,16 @@ const Home = () => {
       repourl: 'https://github.com/sanskarmodi8/DeepDetect',
     },
     {
+      name: 'AUTOFORECAST',
+      url: 'https://autoforecast-bacfbzfudkg5fhbd.centralindia-01.azurewebsites.net/',
+      img: autoforecast,
+      repourl: 'https://github.com/sanskarmodi8/AUTOFORECAST',
+    },
+    {
       name: 'Mushroom Classification',
       url: 'https://mushroom-classification.streamlit.app/',
       img: mushroom,
       repourl: 'https://github.com/sanskarmodi8/mushroom-classification',
-    },
-    {
-      name: 'MCQ Generator',
-      url: 'https://mcqs-generator.streamlit.app/',
-      img: mcq,
-      repourl: 'https://github.com/sanskarmodi8/mcq_generator',
     },
   ];
   const tab3_projects = [];
