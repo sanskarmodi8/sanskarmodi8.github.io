@@ -22,7 +22,6 @@ import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
 import deepdetect from '../assets/img/ddlogo.png';
-import mushroom from '../assets/img/mushroom.png';
 import autoforecast from '../assets/img/autoforecast.png';
 import bt from '../assets/img/bt.png';
 
