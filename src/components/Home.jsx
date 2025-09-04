@@ -24,27 +24,34 @@ import footerimg from '../assets/img/footer-bg.webp';
 import deepdetect from '../assets/img/ddlogo.png';
 import mushroom from '../assets/img/mushroom.png';
 import autoforecast from '../assets/img/autoforecast.png';
+import bt from '../assets/img/bt.png';
 
 const Home = () => {
   const skills = [
     { name: 'Python', value: 90, bool: false },
     { name: 'Dockers', value: 80, bool: false },
-    { name: 'C++', value: '80', bool: false },
+    { name: 'Java', value: 90, bool: false },
     { name: 'Flask', value: 90, bool: false },
     { name: 'FastAPI', value: 90, bool: false },
     { name: 'Scikit-Learn', value: 90, bool: false },
     { name: 'Tensorflow', value: 90, bool: false },
-    { name: 'OpenCV', value: 80, bool: false },
-    { name: 'MLFLOW', value: 85, bool: false },
-    { name: 'DVC', value: 85, bool: false },
+    { name: 'OpenCV', value: 90, bool: false },
+    { name: 'MLFLOW', value: 80, bool: false },
+    { name: 'DVC', value: 90, bool: false },
     { name: 'ZenML', value: 80, bool: false },
-    { name: 'PyTorch', value: 80, bool: false },
-    { name: 'Hugging Face', value: 80, bool: false },
+    { name: 'PyTorch', value: 90, bool: false },
+    { name: 'Hugging Face', value: 90, bool: false },
     { name: 'Langchain', value: 90, bool: false },
     { name: 'Gradio' , value: 90 , bool: false},
     { name: 'Streamlit' , value: 90 , bool: false},
   ];
-  const tab1_projects = [
+  const projects = [
+    {
+      name: 'Brain Tumor Segmentation',
+      url: 'https://sanskarmodi8-brain-tumor-segmentation-app-v4gu5u.streamlit.app/',
+      img: bt,
+      repourl: 'https://github.com/sanskarmodi8/brain_tumor_segmentation',
+    },
     {
       name: 'Deepfake Detection',
       url: 'https://huggingface.co/spaces/SanskarModi/DeepDetect',
@@ -57,17 +64,8 @@ const Home = () => {
       img: autoforecast,
       repourl: 'https://github.com/sanskarmodi8/AUTOFORECAST',
     },
-    {
-      name: 'Mushroom Classification',
-      url: 'https://mushroom-classification.streamlit.app/',
-      img: mushroom,
-      repourl: 'https://github.com/sanskarmodi8/mushroom-classification',
-    },
   ];
-  const tab3_projects = [];
-  const tab2_projects = [];
 
-  const [activeTab, setActiveTab] = useState('ml');
   return (
     <Box
       w={'full'}
@@ -140,8 +138,8 @@ const Home = () => {
             alignSelf={'flex-start'}
             lineHeight={['1.3em', '1.5em', '1.5em', '1.7em']}
           >
-            As a person interested in AI and ML, I look forward for creating
-            impactful solutions. I love contributing to the Open Source, I
+            As a passionate AI/ML Engineer, I look forward for creating
+            intelligent and impactful solutions. I love contributing to the Open Source, I
             thrive on challenges and embrace continuous learning.
           </Box>
           <Box
@@ -268,122 +266,12 @@ const Home = () => {
         >
           Projects
         </Box>
-        <Box h={'fit-content'} w={'fit-content'}>
-          <Box
-            background={
-              activeTab === 'ml'
-                ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
-                : 'rgb(255 255 255 / 10%)'
-            }
-            fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
-            display={'inline-flex'}
-            color={'white'}
-            letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['8px', '8px', '13px', '18px']}
-            px={['10px', '15px', '20px', '50px', '50px', '70px']}
-            m={'0px'}
-            border={'1px solid rgba(255, 255, 255, 0.5)'}
-            borderRadius={'64px 0 0 64px'}
-            onClick={() => setActiveTab('ml')}
-            cursor={'pointer'}
-          >
-            AI / ML
-          </Box>
-          <Box
-            background={
-              activeTab === 'reimpl'
-                ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
-                : 'rgb(255 255 255 / 10%)'
-            }
-            display={'inline-flex'}
-            color={'white'}
-            letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['8px', '8px', '13px', '18px']}
-            fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
-            px={['20px', '25px', '30px', '60px', '60px', '80px']}
-            m={'0px'}
-            border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('reimpl')}
-            cursor={'pointer'}
-          >
-            Reimplementations
-          </Box>
-          <Box
-            background={
-              activeTab === 'cpp'
-                ? 'linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)'
-                : 'rgb(255 255 255 / 10%)'
-            }
-            display={'inline-flex'}
-            color={'white'}
-            letterSpacing={['normal', 'wide', 'wise', 'wider']}
-            padding={['8px', '8px', '13px', '18px']}
-            fontSize={['2xs', 'xs', 'sm', 'sm', 'md', 'md']}
-            px={['20px', '25px', '30px', '60px', '60px', '80px']}
-            m={'0px'}
-            border={'1px solid rgba(255, 255, 255, 0.5)'}
-            onClick={() => setActiveTab('cpp')}
-            borderRadius={'0 64px 64px 0'}
-            cursor={'pointer'}
-          >
-            C++ & DSA
-          </Box>
-        </Box>
-        <Box
-          w={'fit-content'}
-          h={'fit-content'}
-          className="aboutskillsnprojects"
-          pt={'70px'}
-          display={'flex'}
-          color={'#B8B8B8'}
-          textAlign={'center'}
-          fontSize={['xs', 'sm', 'sm', 'md', 'md']}
-          letterSpacing={'widest'}
-          lineHeight={'1.5em'}
-        >
-          {activeTab === 'cpp'
-            ? `Personal projects using C++, Data Structures and Algorithms .`
-            : activeTab === 'ml'
-            ? `Personal projects using AI, ML.`
-            : `ML Research papers reimplemented.`}
-        </Box>
         <HStack
-          display={activeTab === 'cpp' ? 'inherit' : 'none'}
           mt={'50px'}
           wrap={'wrap'}
           justifyContent={'space-evenly'}
         >
-          {tab2_projects.map(i => (
-            <Project
-              name={i.name}
-              url={i.url}
-              img={i.img}
-              repourl={i.repourl}
-            />
-          ))}
-        </HStack>
-        <HStack
-          display={activeTab === 'ml' ? 'inherit' : 'none'}
-          mt={'50px'}
-          wrap={'wrap'}
-          justifyContent={'space-evenly'}
-        >
-          {tab1_projects.map(i => (
-            <Project
-              name={i.name}
-              url={i.url}
-              img={i.img}
-              repourl={i.repourl}
-            />
-          ))}
-        </HStack>
-        <HStack
-          display={activeTab === 'reimpl' ? 'inherit' : 'none'}
-          mt={'50px'}
-          wrap={'wrap'}
-          justifyContent={'space-evenly'}
-        >
-          {tab3_projects.map(i => (
+          {projects.map(i => (
             <Project
               name={i.name}
               url={i.url}
