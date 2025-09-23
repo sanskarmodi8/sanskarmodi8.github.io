@@ -22,7 +22,7 @@ import TypeWriterEffect from 'react-typewriter-effect';
 import { AiOutlineDownload } from 'react-icons/ai';
 import footerimg from '../assets/img/footer-bg.webp';
 import deepdetect from '../assets/img/ddlogo.png';
-import autoforecast from '../assets/img/autoforecast.png';
+import marketmind from '../assets/img/market.png';
 import bt from '../assets/img/bt.png';
 
 const Home = () => {
@@ -57,10 +57,10 @@ const Home = () => {
       repourl: 'https://github.com/sanskarmodi8/DeepDetect',
     },
     {
-      name: 'AUTOFORECAST',
-      url: 'https://autoforecast-bacfbzfudkg5fhbd.centralindia-01.azurewebsites.net/',
-      img: autoforecast,
-      repourl: 'https://github.com/sanskarmodi8/AUTOFORECAST',
+      name: 'MarketMind',
+      url: 'https://marketmind-sanskarmodi.streamlit.app/',
+      img: marketmind,
+      repourl: 'https://github.com/sanskarmodi8/MarketMind',
     },
   ];
 
