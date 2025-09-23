@@ -137,7 +137,7 @@ const Home = () => {
             lineHeight={['1.3em', '1.5em', '1.5em', '1.7em']}
           >
             As a passionate AI/ML Engineer, I look forward for creating
-            intelligent and impactful solutions. I love contributing to the Open Source, I
+            intelligent and impactful solutions. I
             thrive on challenges and embrace continuous learning.
           </Box>
           <Box
