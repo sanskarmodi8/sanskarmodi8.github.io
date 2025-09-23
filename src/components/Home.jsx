@@ -118,7 +118,7 @@ const Home = () => {
             <TypeWriterEffect
               startDelay={100}
               cursorColor="white"
-              multiText={["Hi! I'm Sanskar, an ML Engineer,", 'I Love AI.']}
+              multiText={["Hi! I'm Sanskar, an AI Engineer,"]}
               multiTextDelay={1500}
               typeSpeed={69}
               multiTextLoop
