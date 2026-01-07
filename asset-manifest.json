@@ -1,16 +1,10 @@
 {
   "files": {
-    "main.js": "/static/js/main.e2cc02f9.js",
-    "static/media/bt.png": "/static/media/bt.ea2f62b98b15ef6626ad.png",
-    "static/media/ddlogo.png": "/static/media/ddlogo.af96aed29f4583bf1423.png",
-    "static/media/market.png": "/static/media/market.3748096d6160102ce5c1.png",
-    "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
-    "static/media/banner-bg.webp": "/static/media/banner-bg.5297761ad7c077127d21.webp",
-    "static/media/footer-bg.webp": "/static/media/footer-bg.6739f2f7a7ab61e22251.webp",
+    "main.js": "/static/js/main.d1ad2ef9.js",
     "index.html": "/index.html",
-    "main.e2cc02f9.js.map": "/static/js/main.e2cc02f9.js.map"
+    "main.d1ad2ef9.js.map": "/static/js/main.d1ad2ef9.js.map"
   },
   "entrypoints": [
-    "static/js/main.e2cc02f9.js"
+    "static/js/main.d1ad2ef9.js"
   ]
 }
