@@ -4,7 +4,7 @@
 
 AI Engineer focused on building **production-grade machine learning systems** — from deep learning models to deployable APIs and evaluation pipelines.
 
-I work primarily with **PyTorch**, and my interests span **computer vision, reinforcement learning, and LLM-based systems**.
+I primarily work with **PyTorch**, and my interests include **computer vision, reinforcement learning, and LLM-based systems**.
 
 🌐 **Portfolio:** https://sanskarmodi8.github.io  
 
@@ -21,7 +21,7 @@ FastAPI backend with document ingestion, citation-aware responses, and retrieval
 
 ### 🔹 MarketMind — Reinforcement Learning Trading System  
 PPO-based Bitcoin trading agent achieving **204% return** vs 124% buy-and-hold baseline.  
-Includes MLflow + DVC for experiment tracking and reproducibility.  
+MLflow + DVC used for experiment tracking and reproducibility.  
 👉 https://github.com/sanskarmodi8/MarketMind  
 
 ---
@@ -51,9 +51,13 @@ Deployed on Hugging Face Spaces.
 
 ---
 
-## 📊 GitHub Activity
+## 📊 GitHub Stats & Activity
 
 ![Sanskar's GitHub Stats](https://github-readme-stats.vercel.app/api?username=sanskarmodi8&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117)
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=sanskarmodi8&theme=dark&hide_border=true&background=0D1117)](https://git.io/streak-stats)
+
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=sanskarmodi8&bg_color=0D1117&color=C9D1D9&line=FFFFFF&point=9B59B6&hide_border=true)
 
 ---
 
@@ -66,4 +70,4 @@ Deployed on Hugging Face Spaces.
 
 ---
 
-*I care about building systems that work in practice, not just in notebooks.*
+*I care about building systems that work in practice — not just collecting stars or streaks.*
