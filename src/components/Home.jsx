@@ -1,494 +1,564 @@
-import {
-  Box,
-  Image,
-  VStack,
-  Text,
-  CircularProgress,
-  CircularProgressLabel,
-  HStack,
-  Stack,
-  Heading,
-  Spacer,
-} from '@chakra-ui/react';
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { FaPlay } from 'react-icons/fa';
-import { FiGithub } from 'react-icons/fi';
-import { FaLinkedinIn } from 'react-icons/fa';
-import React, { useState } from 'react';
-import banner from '../assets/img/banner-bg.webp';
-import { motion } from 'framer-motion';
-import astronaut from '../assets/img/header-img.svg';
-import TypeWriterEffect from 'react-typewriter-effect';
-import { AiOutlineDownload } from 'react-icons/ai';
-import footerimg from '../assets/img/footer-bg.webp';
-import deepdetect from '../assets/img/ddlogo.png';
-import marketmind from '../assets/img/market.png';
-import bt from '../assets/img/bt.png';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Brain, TrendingUp, Shield, BookOpen, Code, Terminal, Sparkles } from 'lucide-react';
 
-const Home = () => {
-  const skills = [
-    { name: 'Python', value: 90, bool: false },
-    { name: 'Dockers', value: 80, bool: false },
-    { name: 'Java', value: 90, bool: false },
-    { name: 'Flask', value: 90, bool: false },
-    { name: 'FastAPI', value: 90, bool: false },
-    { name: 'Scikit-Learn', value: 90, bool: false },
-    { name: 'Tensorflow', value: 90, bool: false },
-    { name: 'OpenCV', value: 90, bool: false },
-    { name: 'MLFLOW', value: 80, bool: false },
-    { name: 'DVC', value: 90, bool: false },
-    { name: 'PyTorch', value: 90, bool: false },
-    { name: 'Hugging Face', value: 90, bool: false },
-    { name: 'Langchain', value: 90, bool: false },
-    { name: 'Gradio' , value: 90 , bool: false},
-    { name: 'Streamlit' , value: 90 , bool: false},
-  ];
+export default function Portfolio() {
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+      
+      const sections = ['home', 'projects', 'experience', 'skills', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const projects = [
     {
-      name: 'Brain Tumor Segmentation',
-      url: 'https://sanskarmodi8-brain-tumor-segmentation-app-v4gu5u.streamlit.app/',
-      img: bt,
-      repourl: 'https://github.com/sanskarmodi8/brain_tumor_segmentation',
+      title: "AtlasRAG",
+      subtitle: "Production RAG System",
+      description: "Hybrid retrieval pipeline combining vector search, BM25, and concept co-occurrence graphs for citation-aware document QA with proven 100% recall.",
+      tech: ["FastAPI", "LangChain", "NetworkX", "Qdrant", "Next.js"],
+      highlights: ["Recall@5 = 1.00", "Graph-based expansion", "Citation attribution"],
+      liveUrl: "https://atlas-rag.vercel.app/",
+      githubUrl: "https://github.com/sanskarmodi8/Atlas-RAG",
+      icon: BookOpen,
+      color: "#10b981"
     },
     {
-      name: 'Deepfake Detection',
-      url: 'https://huggingface.co/spaces/SanskarModi/DeepDetect',
-      img: deepdetect,
-      repourl: 'https://github.com/sanskarmodi8/DeepDetect',
+      title: "Brain Tumor Segmentation",
+      subtitle: "Medical AI System",
+      description: "Multi-modal MRI segmentation using Swin UNETR trained on 40GB BraTS dataset with 3D visualization and 99.94% accuracy.",
+      tech: ["PyTorch", "MONAI", "Streamlit", "DVC"],
+      highlights: ["99.94% accuracy", "Multi-modal MRI", "Production pipeline"],
+      liveUrl: "https://sanskarmodi8-brain-tumor-segmentation-app-v4gu5u.streamlit.app/",
+      githubUrl: "https://github.com/sanskarmodi8/brain_tumor_segmentation",
+      icon: Brain,
+      color: "#f59e0b"
     },
     {
-      name: 'MarketMind',
-      url: 'https://marketmind-sanskarmodi.streamlit.app/',
-      img: marketmind,
-      repourl: 'https://github.com/sanskarmodi8/MarketMind',
+      title: "MarketMind",
+      subtitle: "RL Trading System",
+      description: "Autonomous Bitcoin trading bot using PPO algorithm with MLflow tracking, achieving 204% returns vs 124% baseline with automated weekly retraining.",
+      tech: ["PyTorch", "Stable-Baselines3", "MLflow", "DVC"],
+      highlights: ["204% vs 124% baseline", "Auto retraining", "MLflow tracking"],
+      liveUrl: "https://marketmind-sanskarmodi.streamlit.app/",
+      githubUrl: "https://github.com/sanskarmodi8/MarketMind",
+      icon: TrendingUp,
+      color: "#3b82f6"
     },
+    {
+      title: "DeepDetect",
+      subtitle: "Deepfake Detection",
+      description: "Video-based deepfake detection with visual explainability using heatmaps, achieving 93% F1 score with real-time processing capabilities.",
+      tech: ["PyTorch", "OpenCV", "MediaPipe", "Gradio"],
+      highlights: ["93% F1 score", "Visual heatmaps", "Real-time detection"],
+      liveUrl: "https://huggingface.co/spaces/SanskarModi/DeepDetect",
+      githubUrl: "https://github.com/sanskarmodi8/DeepDetect",
+      icon: Shield,
+      color: "#ef4444"
+    }
+  ];
+
+  const skills = [
+    { category: "Machine Learning", items: ["Deep Learning", "Computer Vision", "Reinforcement Learning", "NLP", "Generative AI"], color: "#3b82f6" },
+    { category: "Frameworks", items: ["PyTorch", "Scikit-learn", "Hugging Face", "LangChain", "OpenCV"], color: "#10b981" },
+    { category: "MLOps & Backend", items: ["Docker", "MLflow", "DVC", "FastAPI", "REST APIs"], color: "#f59e0b" },
+    { category: "Languages", items: ["Python", "Java", "Linux", "Git"], color: "#ef4444" }
+  ];
+
+  const experience = [
+    {
+      title: "Open Source Contributor",
+      org: "sktime",
+      period: "2024",
+      type: "Open Source",
+      achievements: [
+        "Contributed DA-RNN forecaster implementation to production codebase",
+        "Successfully completed Hacktoberfest 2024 with merged PRs",
+        "Active contributor to time series ML library used by thousands"
+      ]
+    },
+    {
+      title: "ML Project Intern",
+      org: "PW Skills",
+      period: "2024",
+      type: "Industry",
+      achievements: [
+        "Built and deployed end-to-end ML system in production environment",
+        "Implemented reproducible ML pipelines with DVC and MLflow",
+        "Collaborated on industry-level projects with real-world impact"
+      ]
+    }
   ];
 
   return (
-    <Box
-      w={'full'}
-      h="fit-content"
-      backgroundImage={banner}
-      bgColor={'black'}
-      pt={['14vh', '16vh', '18vh', '20vh']}
-      id="home"
-      bgRepeat={'no-repeat'}
-    >
-      <Stack
-        direction={
-          window.matchMedia('(max-width: 850px)').matches ? 'column' : 'row'
-        }
-        w={'full'}
-        px={['30px', '50px', '100px', '100px', '150px', '250px']}
-        h={'55vh'}
-      >
-        <VStack
-          display={'flex'}
-          h={'full'}
-          w={window.matchMedia('(max-width: 850px)').matches ? 'full' : '45vw'}
-        >
-          <Box
-            alignSelf={'flex-start'}
-            display={'flex'}
-            w={'fit-content'}
-            h={'fit-content'}
-            mb={'15px'}
-            fontWeight={['bold', 'extrabold']}
-            p={'7px 13px'}
-            letterSpacing={['wide', 'wider', 'widest']}
-            color={'white'}
-            border={'1px solid rgba(255, 255, 255, 0.5)'}
-            fontSize={['12px', '14px', '16px', '18px']}
-            background={
-              'linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%)'
-            }
-          >
-            Welcome to my portfolio
-          </Box>
-          <Box
-            alignSelf={'flex-start'}
-            fontSize={['xl', '2xl', '2xl', '5xl']}
-            fontWeight={'extrabold'}
-            color={'white'}
-            fontFamily={'heading'}
-            display={'flex'}
-            w={'fit-content'}
-            h={'fit-content'}
-          >
-            <TypeWriterEffect
-              startDelay={100}
-              cursorColor="white"
-              multiText={["Hi! I'm Sanskar, an AI Engineer,"]}
-              multiTextDelay={1500}
-              typeSpeed={69}
-              multiTextLoop
-            />
-          </Box>
-          <Box
-            mt={'20px'}
-            display={'flex'}
-            w={'fit-content'}
-            h={'fit-content'}
-            color={'#B8B8B8'}
-            fontSize={['14px', '16px', '16px', '18px']}
-            letterSpacing={'widest'}
-            p={'10px 0px'}
-            alignSelf={'flex-start'}
-            lineHeight={['1.3em', '1.5em', '1.5em', '1.7em']}
-          >
-            As a passionate AI/ML Engineer, I look forward for creating
-            intelligent and impactful solutions. I
-            thrive on challenges and embrace continuous learning.
-          </Box>
-          <Box
-            display={'flex'}
-            w={'fit-content'}
-            h={'fit-content'}
-            p={'10px 0px'}
-            mt={'20px'}
-            alignSelf={'flex-start'}
-          >
-            {/* eslint-disable-next-line */}
-            <a 
-              href="https://drive.google.com/file/d/12fUlMF4trz9mXT8QhhdAK29UO5JJCdEy/view?usp=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none' }}
-            >
-              <Box
-                color={'white'}
-                letterSpacing={'wide'}
-                transition={'0.3s ease-in-out'}
-                fontSize={['md', 'xl']}
-                fontWeight={'extrabold'}
-                _hover={{ cursor: 'pointer' }}
-              >
-                <HStack>
-                  <Text>Resume</Text>{' '}
-                  <AiOutlineDownload size={'1.3em'} color="white" />
-                </HStack>
-              </Box>
-            </a>
-          </Box>
-        </VStack>
-        <VStack
-          h={'fit-content'}
-          display={'flex'}
-          w={
-            window.matchMedia('(max-width: 850px)').matches
-              ? 'full'
-              : 'fit-content'
-          }
-        >
-          <motion.div
-            animate={{
-              translateY: window.matchMedia('(max-width: 850px)').matches
-                ? '25px'
-                : '50px',
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-          >
-            <Image
-              h={['40vh', '45vh', '45vh', '55vh']}
-              objectFit={'contain'}
-              src={astronaut}
-              alt="astronaut"
-            />
-          </motion.div>
-        </VStack>
-      </Stack>
-      <VStack
-        mt={['300px', '320px', '320px', '250px', '150px', '50px']}
-        id="skills"
-        h={'fit-content'}
-        pb={'50px'}
-        p={'8px'}
-        borderRadius={'64px'}
-        mx={['30px', '50px', '100px', '100px', '150px', '250px']}
-        bgColor={'#151515'}
-      >
-        <Box
-          display={'flex'}
-          color={'white'}
-          fontSize={['25px', '30px', '40px']}
-          fontWeight={'bold'}
-          fontFamily={'heading'}
-          w={'fit-content'}
-          h={'fit-content'}
-          my={'20px'}
-        >
-          Skills
-        </Box>
-        <Box
-          w={'fit-content'}
-          h={'fit-content'}
-          display={'flex'}
-          color={'#B8B8B8'}
-          textAlign={'center'}
-          className="aboutskillsnprojects"
-          fontSize={['14px', '16px', '18px']}
-          letterSpacing={['wide', 'wider', 'widest']}
-          lineHeight={['1.1em', '1.3em', '1.5em']}
-          pb={'20px'}
-        >
-          These are the skills I currently acquire and working on.
-        </Box>
-        <HStack pb={'25px'} wrap={'wrap'} justifyContent={'space-evenly'}>
-          {skills.map(i => (
-            <Skill name={i.name} value={i.value} bool={i.bool} />
-          ))}
-        </HStack>
-      </VStack>
-      <VStack
-        w={'full'}
-        h={'fit-content'}
-        bgColor={'black'}
-        mt={'100px'}
-        id="projects"
-        px={['10px', '20px', '30px', '40px', '70px', '90px', '120px', '150px']}
-        pb={'200px'}
-      >
-        <Box
-          display={'flex'}
-          color={'white'}
-          fontSize={['25px', '30px', '40px']}
-          fontWeight={'bold'}
-          fontFamily={'heading'}
-          w={'fit-content'}
-          h={'fit-content'}
-          pb={'40px'}
-        >
-          Projects
-        </Box>
-        <HStack
-          mt={'50px'}
-          wrap={'wrap'}
-          justifyContent={'space-evenly'}
-        >
-          {projects.map(i => (
-            <Project
-              name={i.name}
-              url={i.url}
-              img={i.img}
-              repourl={i.repourl}
-            />
-          ))}
-        </HStack>
-      </VStack>
-      <Stack
-        py={'100px'}
-        id="contact"
-        px={['30px', '50px', '100px', '100px', '150px', '250px']}
-        direction={
-          window.matchMedia('(max-width: 700px)').matches ? 'column' : 'row'
-        }
-        bgImage={footerimg}
-        display={'flex'}
-        alignItems={'center'}
-      >
-        <Box display={'flex'}>
-          <Heading mb={'10px'} color={'white'} size={['sm', 'md', 'md', 'lg']}>
-            SANSKAR MODI
-          </Heading>
-        </Box>
-        <Spacer className="footerspacer" />
-        <VStack display={'flex'}>
-          <Box
-            display={'flex'}
-            alignSelf={
-              window.matchMedia('(max-width: 700px)').matches
-                ? 'center'
-                : 'flex-end'
-            }
-          >
-            <a
-              href="https://www.linkedin.com/in/sanskar-modi-ba53a2267?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BS%2Bydo8EpQbmX4Yw%2BvCDBXA%3D%3D"
-              target="blank"
-            >
-              <Box
-                bgColor={'#282828'}
-                padding={['9px', '10px', '12px']}
-                border={'1px solid white'}
-                borderRadius={'100%'}
-                mr={'10px'}
-                _hover={{ bgColor: '#60bafa' }}
-                transition={'0.3s ease-in-out'}
-              >
-                <FaLinkedinIn color="white" size={'1.2em'} />
-              </Box>
-            </a>
-            <a href="https://twitter.com/sanskar_modi8" target="blank">
-              <Box
-                bgColor={'#282828'}
-                padding={['9px', '10px', '12px']}
-                border={'1px solid white'}
-                borderRadius={'100%'}
-                mr={'10px'}
-                _hover={{ bgColor: '#60bafa' }}
-                transition={'0.3s ease-in-out'}
-              >
-                <AiOutlineTwitter color="white" size={'1.2em'} />
-              </Box>
-            </a>
-            <a href="https://github.com/sanskarmodi8" target="blank">
-              <Box
-                bgColor={'#282828'}
-                padding={['9px', '10px', '12px']}
-                border={'1px solid white'}
-                borderRadius={'100%'}
-                _hover={{ bgColor: '#60bafa' }}
-                transition={'0.3s ease-in-out'}
-                className="github"
-              >
-                <FiGithub color="white" size={'1.2em'} />
-              </Box>
-            </a>
-          </Box>
-          <Text
-            fontSize={'14px'}
-            fontWeight={'400'}
-            letterSpacing={'0.5px'}
-            color={'#B8B8B8'}
-          >
-            Copyright 2023. All rights reserved
-          </Text>
-        </VStack>
-      </Stack>
-    </Box>
-  );
-};
-const Project = ({ name, url, img, repourl }) => {
-  return (
-    <VStack>
-      <Box
-        h={'fit-content'}
-        mt={['20px', '30px', '30px', '40px']}
-        w={'fit-content'}
-        position={'relative'}
-      >
-        <Image
-          className="projectimg"
-          fit={'fit'}
-          borderRadius={'10px'}
-          w={['330px', '330px', '330px', '355px', '405px']}
-          h={['220px', '220px', '220px', '245px', '295px']}
-          src={img}
-          alt="project"
-        />
+    <div style={{ minHeight: '100vh', background: '#0a0a0a', color: '#ffffff' }}>
+      {/* Animated background */}
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0, opacity: 0.4 }}>
+        <div style={{ position: 'absolute', top: '20%', left: '10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(59,130,246,0.3) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
+        <div style={{ position: 'absolute', top: '60%', right: '10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(16,185,129,0.3) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
+        <div style={{ position: 'absolute', bottom: '20%', left: '50%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
+      </div>
 
-        <VStack
-          pos={'absolute'}
-          borderRadius={'10px'}
-          _hover={{
-            opacity: '0.95',
-            background:
-              'linear-gradient(90.21deg, #9370db -5.91%, #9370db 111.58%)',
-          }}
-          top={0}
-          bottom={0}
-          left={0}
-          right={0}
-          opacity={0}
-          transition={'0.3s ease-in-out'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          background={
-            'linear-gradient(90.21deg, #9370db -5.91%, #9370db 111.58%)'
-          }
-        >
-          <Text
-            p={'5px'}
-            fontSize={'lg'}
-            color={'white'}
-            as={'h2'}
-            fontWeight={'extrabold'}
-          >{`${name}`}</Text>
-          <Box display={'flex'}>
-            {url !== '' ? (
-              <a href={url} target="blank">
-                <Box
-                  bgColor={'#282828'}
-                  padding={'13px'}
-                  border={'1px solid white'}
-                  borderRadius={'100%'}
-                  mr={'10'}
-                  _hover={{ bgColor: 'black' }}
-                  transition={'0.3s ease-in-out'}
-                >
-                  <FaPlay color="white" size={'1em'} />
-                </Box>
+      {/* Navigation */}
+      <nav style={{
+        position: 'fixed',
+        width: '100%',
+        zIndex: 1000,
+        transition: 'all 0.3s',
+        background: scrolled ? 'rgba(10, 10, 10, 0.8)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none'
+      }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.25rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Terminal size={24} style={{ color: '#3b82f6' }} />
+            <span>Sanskar Modi</span>
+          </h1>
+          <div style={{ display: 'flex', gap: '2rem' }}>
+            {['home', 'projects', 'experience', 'skills', 'contact'].map(section => (
+              <a 
+                key={section}
+                href={`#${section}`} 
+                style={{ 
+                  color: activeSection === section ? '#3b82f6' : '#9ca3af', 
+                  textDecoration: 'none', 
+                  transition: 'color 0.3s',
+                  fontWeight: activeSection === section ? '600' : '400',
+                  textTransform: 'capitalize'
+                }} 
+                onMouseEnter={e => e.target.style.color = '#3b82f6'} 
+                onMouseLeave={e => e.target.style.color = activeSection === section ? '#3b82f6' : '#9ca3af'}
+              >
+                {section}
               </a>
-            ) : (
-              <></>
-            )}
-            <a href={`${repourl}`} target="blank">
-              <Box
-                bgColor={'#282828'}
-                padding={'12px'}
-                border={'1px solid white'}
-                borderRadius={'100%'}
-                _hover={{ bgColor: 'black' }}
-                transition={'0.3s ease-in-out'}
-                className="github"
-              >
-                <FiGithub color="white" size={'1.2em'} />
-              </Box>
-            </a>
-          </Box>
-        </VStack>
-      </Box>
-      <Text
-        py={'10px'}
-        color={'#B8B8B8'}
-        textAlign={'center'}
-        fontSize={['xs', 'sm', 'sm', 'md', 'md']}
-        letterSpacing={'widest'}
-        lineHeight={'1.5em'}
-      >
-        {name}
-      </Text>
-    </VStack>
-  );
-};
-const Skill = ({ name, value, bool }) => {
-  return (
-    <Box
-      className="skillscontainer"
-      px={['20px', '20px', '20px', '50px']}
-      py={['0px', '50px']}
-      textAlign={'center'}
-      mb={['30px', '30px']}
-    >
-      <CircularProgress
-        value={value}
-        size={['80px', '90px', '100px', '200px']}
-        color="mediumpurple"
-        trackColor="gray.900"
-        capIsRound
-        isIndeterminate={bool}
-      >
-        <CircularProgressLabel
-          fontSize={['14px', '16px', '20px', '24px']}
-          fontWeight={'bold'}
-          color={'white'}
-        >
-          {bool ? '' : `${value}%`}
-        </CircularProgressLabel>
-      </CircularProgress>
-      <Text
-        fontSize={['sm', 'md']}
-        color={'white'}
-        mt={[3, 3, 3, 3, -20]}
-        letterSpacing={['tight', 'wide', 'wider', 'widest']}
-      >
-        {`${name}`}
-      </Text>
-    </Box>
-  );
-};
+            ))}
+          </div>
+        </div>
+      </nav>
 
-export default Home;
+      {/* Hero Section */}
+      <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6rem 1.5rem 0', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1100px', width: '100%' }}>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.25rem', background: 'rgba(59, 130, 246, 0.1)', borderRadius: '9999px', border: '1px solid rgba(59, 130, 246, 0.3)', marginBottom: '2rem' }}>
+              <Sparkles size={16} style={{ color: '#3b82f6' }} />
+              <span style={{ fontSize: '0.875rem', color: '#93c5fd' }}>Open to AI/ML Engineering Roles</span>
+            </div>
+            
+            <h1 style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: '1.5rem', lineHeight: '1.1', letterSpacing: '-0.02em' }}>
+              AI Engineer Building
+              <br />
+              <span style={{ 
+                background: 'linear-gradient(135deg, #3b82f6 0%, #10b981 50%, #f59e0b 100%)', 
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent',
+                backgroundSize: '200% 200%',
+                animation: 'gradient 3s ease infinite'
+              }}>
+                Production ML Systems
+              </span>
+            </h1>
+            
+            <p style={{ fontSize: '1.25rem', color: '#9ca3af', maxWidth: '800px', margin: '0 auto 1rem', lineHeight: '1.8' }}>
+              Specializing in <span style={{ color: '#3b82f6', fontWeight: '600' }}>deep learning</span>, <span style={{ color: '#10b981', fontWeight: '600' }}>computer vision</span>, and <span style={{ color: '#f59e0b', fontWeight: '600' }}>LLM systems</span>
+            </p>
+            
+            <p style={{ fontSize: '1rem', color: '#6b7280', maxWidth: '700px', margin: '0 auto 3rem', lineHeight: '1.75' }}>
+              Proven track record with 99.94% accuracy medical AI, 204% returns RL trading bot, and production RAG systems. Experienced with MLOps, Docker, and full-stack deployment.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '2rem' }}>
+              <a href="https://drive.google.com/file/d/12fUlMF4trz9mXT8QhhdAK29UO5JJCdEy/view" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 style={{ 
+                   padding: '1rem 2rem', 
+                   background: 'linear-gradient(135deg, #3b82f6, #10b981)', 
+                   borderRadius: '0.75rem', 
+                   fontWeight: '600', 
+                   textDecoration: 'none', 
+                   color: '#fff', 
+                   transition: 'all 0.3s',
+                   boxShadow: '0 10px 40px rgba(59, 130, 246, 0.3)',
+                   display: 'flex',
+                   alignItems: 'center',
+                   gap: '0.5rem'
+                 }}>
+                <Code size={20} />
+                View Resume
+              </a>
+              <a href="#contact" 
+                 style={{ 
+                   padding: '1rem 2rem', 
+                   background: 'rgba(255, 255, 255, 0.05)', 
+                   border: '1px solid rgba(255, 255, 255, 0.1)',
+                   borderRadius: '0.75rem', 
+                   fontWeight: '600', 
+                   textDecoration: 'none', 
+                   color: '#fff', 
+                   transition: 'all 0.3s',
+                   display: 'flex',
+                   alignItems: 'center',
+                   gap: '0.5rem'
+                 }}>
+                <Mail size={20} />
+                Get in Touch
+              </a>
+            </div>
+
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+              <SocialLink href="https://github.com/sanskarmodi8" icon={Github} />
+              <SocialLink href="https://www.linkedin.com/in/sanskar-modi-ba53a2267/" icon={Linkedin} />
+              <SocialLink href="mailto:sansyprog8@gmail.com" icon={Mail} />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5rem' }}>
+            <ChevronDown size={32} style={{ color: '#3b82f6', animation: 'bounce 2s infinite' }} />
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" style={{ padding: '8rem 1.5rem', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+              Featured Projects
+            </h2>
+            <p style={{ fontSize: '1.125rem', color: '#9ca3af', maxWidth: '700px', margin: '0 auto' }}>
+              Production-ready AI systems demonstrating end-to-end ML engineering expertise
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+            {projects.map((project, idx) => (
+              <ProjectCard key={idx} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" style={{ padding: '8rem 1.5rem', background: 'rgba(255, 255, 255, 0.02)', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+              Experience
+            </h2>
+            <p style={{ fontSize: '1.125rem', color: '#9ca3af' }}>
+              Open source contributions and industry projects
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', maxWidth: '1024px', margin: '0 auto' }}>
+            {experience.map((exp, idx) => (
+              <ExperienceCard key={idx} exp={exp} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" style={{ padding: '8rem 1.5rem', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+              Technical Stack
+            </h2>
+            <p style={{ fontSize: '1.125rem', color: '#9ca3af' }}>
+              Tools and technologies I work with
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {skills.map((skill, idx) => (
+              <SkillCard key={idx} skill={skill} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" style={{ padding: '8rem 1.5rem', background: 'rgba(255, 255, 255, 0.02)', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
+            Let's Build Something Amazing
+          </h2>
+          <p style={{ fontSize: '1.25rem', color: '#9ca3af', marginBottom: '1rem' }}>
+            Open to remote AI/ML engineering opportunities
+          </p>
+          <p style={{ fontSize: '1rem', color: '#6b7280', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+            Looking for roles where I can apply deep learning, MLOps, and production engineering to solve real-world problems.
+          </p>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
+            <ContactButton 
+              href="mailto:sansyprog8@gmail.com" 
+              icon={Mail}
+              text="Email Me"
+              primary
+            />
+            <ContactButton 
+              href="https://www.linkedin.com/in/sanskar-modi-ba53a2267/" 
+              icon={Linkedin}
+              text="LinkedIn"
+            />
+            <ContactButton 
+              href="https://github.com/sanskarmodi8" 
+              icon={Github}
+              text="GitHub"
+            />
+          </div>
+
+          <div style={{ padding: '2rem', background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRadius: '1rem', maxWidth: '500px', margin: '0 auto' }}>
+            <p style={{ color: '#9ca3af', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Currently pursuing</p>
+            <p style={{ fontSize: '1.125rem', fontWeight: '600', color: '#fff' }}>B.Tech CSE, Bennett University</p>
+            <p style={{ color: '#6b7280', fontSize: '0.875rem', marginTop: '0.5rem' }}>Expected Graduation: 2027</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ padding: '2rem 1.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.05)', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
+            © 2025 Sanskar Modi. Crafted with React & passion for AI.
+          </p>
+        </div>
+      </footer>
+
+      <style>{`
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function ProjectCard({ project }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const Icon = project.icon;
+
+  return (
+    <div 
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        background: isHovered ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.02)',
+        backdropFilter: 'blur(20px)',
+        borderRadius: '1.5rem',
+        padding: '2rem',
+        border: `1px solid ${isHovered ? project.color + '40' : 'rgba(255, 255, 255, 0.05)'}`,
+        transition: 'all 0.4s ease',
+        transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
+        boxShadow: isHovered ? `0 20px 60px ${project.color}20` : 'none'
+      }}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
+        <div style={{ 
+          padding: '1rem', 
+          background: `${project.color}15`, 
+          borderRadius: '1rem',
+          border: `1px solid ${project.color}30`
+        }}>
+          <Icon size={28} style={{ color: project.color }} />
+        </div>
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <IconButton href={project.liveUrl} icon={ExternalLink} />
+          <IconButton href={project.githubUrl} icon={Github} />
+        </div>
+      </div>
+
+      <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#fff' }}>{project.title}</h3>
+      <p style={{ color: project.color, fontSize: '0.875rem', marginBottom: '1rem', fontWeight: '600' }}>{project.subtitle}</p>
+      <p style={{ color: '#9ca3af', marginBottom: '1.5rem', lineHeight: '1.7', fontSize: '0.95rem' }}>{project.description}</p>
+
+      <div style={{ marginBottom: '1.5rem' }}>
+        {project.highlights.map((highlight, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.625rem' }}>
+            <div style={{ width: '8px', height: '8px', background: project.color, borderRadius: '50%', flexShrink: 0 }}></div>
+            <span style={{ fontSize: '0.875rem', color: '#d1d5db' }}>{highlight}</span>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+        {project.tech.map((tech, i) => (
+          <span key={i} style={{ 
+            padding: '0.375rem 0.875rem', 
+            background: 'rgba(255, 255, 255, 0.05)', 
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '0.5rem', 
+            fontSize: '0.75rem', 
+            color: '#e5e7eb',
+            fontWeight: '500'
+          }}>
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ExperienceCard({ exp }) {
+  return (
+    <div style={{ 
+      background: 'rgba(255, 255, 255, 0.02)', 
+      backdropFilter: 'blur(20px)', 
+      borderRadius: '1.5rem', 
+      padding: '2rem', 
+      border: '1px solid rgba(255, 255, 255, 0.05)',
+      transition: 'all 0.3s'
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
+        <div>
+          <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.3)', borderRadius: '0.5rem', marginBottom: '0.75rem' }}>
+            <span style={{ fontSize: '0.75rem', color: '#93c5fd', fontWeight: '600' }}>{exp.type}</span>
+          </div>
+          <h3 style={{ fontSize: '1.375rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{exp.title}</h3>
+          <p style={{ color: '#3b82f6', fontWeight: '600' }}>{exp.org}</p>
+        </div>
+        <span style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: '500' }}>{exp.period}</span>
+      </div>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {exp.achievements.map((achievement, i) => (
+          <li key={i} style={{ display: 'flex', alignItems: 'start', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            <div style={{ width: '6px', height: '6px', background: '#10b981', borderRadius: '50%', marginTop: '0.5rem', flexShrink: 0 }}></div>
+            <span style={{ color: '#d1d5db', fontSize: '0.9rem', lineHeight: '1.6' }}>{achievement}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SkillCard({ skill }) {
+  return (
+    <div style={{ 
+      background: 'rgba(255, 255, 255, 0.02)', 
+      backdropFilter: 'blur(20px)', 
+      borderRadius: '1.5rem', 
+      padding: '2rem', 
+      border: '1px solid rgba(255, 255, 255, 0.05)',
+      transition: 'all 0.3s'
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+        <div style={{ width: '4px', height: '24px', background: skill.color, borderRadius: '2px' }}></div>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{skill.category}</h3>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        {skill.items.map((item, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ width: '8px', height: '8px', background: skill.color, borderRadius: '50%', opacity: 0.6 }}></div>
+            <span style={{ color: '#d1d5db', fontSize: '0.95rem' }}>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SocialLink({ href, icon: Icon }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <a 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        padding: '0.875rem', 
+        background: isHovered ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)', 
+        borderRadius: '1rem', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        transition: 'all 0.3s',
+        border: '1px solid rgba(255, 255, 255, 0.1)'
+      }}
+    >
+      <Icon size={22} style={{ color: isHovered ? '#3b82f6' : '#9ca3af' }} />
+    </a>
+  );
+}
+
+function IconButton({ href, icon: Icon }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <a 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        padding: '0.625rem', 
+        background: isHovered ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)', 
+        borderRadius: '0.5rem', 
+        display: 'flex', 
+        transition: 'all 0.3s',
+        border: '1px solid rgba(255, 255, 255, 0.1)'
+      }}
+    >
+      <Icon size={18} style={{ color: '#9ca3af' }} />
+    </a>
+  );
+}
+
+function ContactButton({ href, icon: Icon, text, primary }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <a 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        padding: '1rem 2rem',
+        background: primary 
+          ? (isHovered ? 'linear-gradient(135deg, #2563eb, #059669)' : 'linear-gradient(135deg, #3b82f6, #10b981)')
+          : (isHovered ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)'),
+        border: primary ? 'none' : '1px solid rgba(255, 255, 255, 0.2)',
+        borderRadius: '0.75rem', 
+        fontWeight: '600', 
+        textDecoration: 'none', 
+        color: '#fff', 
+        display: 'flex', 
+        alignItems: 'center', 
+        gap: '0.5rem',
+        transition: 'all 0.3s',
+        boxShadow: primary && isHovered ? '0 10px 40px rgba(59, 130, 246, 0.3)' : 'none'
+      }}
+    >
+      <Icon size={20} />
+      {text}
+    </a>
+  );
+}
