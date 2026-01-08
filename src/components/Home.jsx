@@ -85,20 +85,20 @@ export default function Portfolio() {
       period: "2024",
       type: "Open Source",
       achievements: [
-        "Contributed DA-RNN forecaster implementation to production codebase",
-        "Successfully completed Hacktoberfest 2024 with merged PRs",
-        "Active contributor to time series ML library used by thousands"
+        "Contributed DA-RNN forecaster to the core library codebase",
+        "Improved robustness and validation in time-series forecasting components",
+        "Experience working with reviews, CI, and production-grade ML code"
       ]
     },
     {
-      title: "ML Project Intern",
-      org: "PW Skills",
+      title: "AI Training & Internship",
+      org: "LearnNex (Powered by Wipro)",
       period: "2024",
-      type: "Industry",
+      type: "Training + Internship",
       achievements: [
-        "Built and deployed end-to-end ML system in production environment",
-        "Implemented reproducible ML pipelines with DVC and MLflow",
-        "Collaborated on industry-level projects with real-world impact"
+        "Built a Retrieval-Augmented Generation (RAG) based LLM application",
+        "Developed a Stable Diffusion image generation pipeline",
+        "Delivered two complete ML systems from model to inference"
       ]
     }
   ];
