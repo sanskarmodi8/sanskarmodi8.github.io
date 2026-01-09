@@ -85,7 +85,7 @@ export default function Portfolio() {
       period: "2024",
       type: "Open Source",
       achievements: [
-        "Contributed DA-RNN forecaster to the core library codebase",
+        "Contributed multiple enhancements, including a bias-adjusted Box–Cox forecaster and a DA-RNN-based forecaster",
         "Improved robustness and validation in time-series forecasting components",
         "Experience working with reviews, CI, and production-grade ML code"
       ]
