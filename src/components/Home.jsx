@@ -73,7 +73,7 @@ export default function Portfolio() {
 
   const skills = [
     { category: "Machine Learning", items: ["Deep Learning", "Computer Vision", "Reinforcement Learning", "NLP", "Generative AI"], color: "#3b82f6" },
-    { category: "Frameworks", items: ["PyTorch", "Scikit-learn", "Hugging Face", "LangChain", "OpenCV"], color: "#10b981" },
+    { category: "Frameworks", items: ["PyTorch", "Scikit-learn", "Hugging Face", "LangChain", "LangGraph", "OpenCV", "Crew AI"], color: "#10b981" },
     { category: "MLOps & Backend", items: ["Docker", "MLflow", "DVC", "FastAPI", "REST APIs"], color: "#f59e0b" },
     { category: "Languages", items: ["Python", "Java", "Linux", "Git"], color: "#ef4444" }
   ];
