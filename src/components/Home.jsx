@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Brain, TrendingUp, Shield, BookOpen, Code, Terminal, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Brain, TrendingUp, Shield, BookOpen, Code, Terminal, Sparkles, Bot, Cloud } from 'lucide-react';
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,6 +25,18 @@ export default function Portfolio() {
   }, []);
 
   const projects = [
+    {
+      title: "Leave Policy AI Agent",
+      subtitle: "Production Agentic System",
+      description: "Enterprise-grade AI agent on Google Cloud Run using Google ADK with ReAct pattern. Hybrid architecture: sub-100ms deterministic fast path ($0 cost) for balance/policy, agentic path for complex eligibility reasoning with multi-turn conversations.",
+      tech: ["Google ADK", "FastAPI", "Snowflake", "Docker", "Cloud Run"],
+      highlights: ["99.9% uptime on Cloud Run", "3 custom tools + auto selection", "80%+ test coverage", "Circuit breaker resilience"],
+      liveUrl: "https://leave-policy-agent-641772618787.us-central1.run.app/docs",
+      githubUrl: "https://github.com/sanskarmodi8/leave-policy-agent",
+      icon: Bot,
+      color: "#8b5cf6",
+      featured: true
+    },
     {
       title: "AtlasRAG",
       subtitle: "Production RAG System",
@@ -72,10 +84,26 @@ export default function Portfolio() {
   ];
 
   const skills = [
-    { category: "Machine Learning", items: ["Deep Learning", "Computer Vision", "Reinforcement Learning", "NLP", "Generative AI"], color: "#3b82f6" },
-    { category: "Frameworks", items: ["PyTorch", "Scikit-learn", "Hugging Face", "LangChain", "LangGraph", "OpenCV", "Crew AI"], color: "#10b981" },
-    { category: "MLOps & Backend", items: ["Docker", "MLflow", "DVC", "FastAPI", "REST APIs"], color: "#f59e0b" },
-    { category: "Languages", items: ["Python", "Java", "Linux", "Git"], color: "#ef4444" }
+    { 
+      category: "LLM & Agentic AI", 
+      items: ["Google ADK", "LangChain", "RAG Systems", "Tool Orchestration", "LiteLLM", "ReAct Pattern"], 
+      color: "#8b5cf6" 
+    },
+    { 
+      category: "Machine Learning", 
+      items: ["Deep Learning", "Computer Vision", "Reinforcement Learning", "NLP", "PyTorch"], 
+      color: "#3b82f6" 
+    },
+    { 
+      category: "Production & Cloud", 
+      items: ["FastAPI", "Docker", "Google Cloud Run", "Azure Portal", "HuggingFace", "Streamlit", "Gradio"], 
+      color: "#10b981" 
+    },
+    { 
+      category: "MLOps & Tools", 
+      items: ["MLflow", "DVC", "Git", "CI/CD", "Linux"], 
+      color: "#f59e0b" 
+    }
   ];
 
   const experience = [
@@ -107,9 +135,9 @@ export default function Portfolio() {
     <div style={{ minHeight: '100vh', background: '#0a0a0a', color: '#ffffff' }}>
       {/* Animated background */}
       <div style={{ position: 'fixed', inset: 0, zIndex: 0, opacity: 0.4 }}>
-        <div style={{ position: 'absolute', top: '20%', left: '10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(59,130,246,0.3) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
+        <div style={{ position: 'absolute', top: '20%', left: '10%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
         <div style={{ position: 'absolute', top: '60%', right: '10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(16,185,129,0.3) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
-        <div style={{ position: 'absolute', bottom: '20%', left: '50%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
+        <div style={{ position: 'absolute', bottom: '20%', left: '50%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
       </div>
 
       {/* Navigation */}
@@ -124,7 +152,7 @@ export default function Portfolio() {
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.25rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Terminal size={24} style={{ color: '#3b82f6' }} />
+            <Terminal size={24} style={{ color: '#8b5cf6' }} />
             <span>Sanskar Modi</span>
           </h1>
           <div style={{ display: 'flex', gap: '2rem' }}>
@@ -133,14 +161,14 @@ export default function Portfolio() {
                 key={section}
                 href={`#${section}`} 
                 style={{ 
-                  color: activeSection === section ? '#3b82f6' : '#9ca3af', 
+                  color: activeSection === section ? '#8b5cf6' : '#9ca3af', 
                   textDecoration: 'none', 
                   transition: 'color 0.3s',
                   fontWeight: activeSection === section ? '600' : '400',
                   textTransform: 'capitalize'
                 }} 
-                onMouseEnter={e => e.target.style.color = '#3b82f6'} 
-                onMouseLeave={e => e.target.style.color = activeSection === section ? '#3b82f6' : '#9ca3af'}
+                onMouseEnter={e => e.target.style.color = '#8b5cf6'} 
+                onMouseLeave={e => e.target.style.color = activeSection === section ? '#8b5cf6' : '#9ca3af'}
               >
                 {section}
               </a>
@@ -153,31 +181,31 @@ export default function Portfolio() {
       <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6rem 1.5rem 0', position: 'relative', zIndex: 1 }}>
         <div style={{ maxWidth: '1100px', width: '100%' }}>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.25rem', background: 'rgba(59, 130, 246, 0.1)', borderRadius: '9999px', border: '1px solid rgba(59, 130, 246, 0.3)', marginBottom: '2rem' }}>
-              <Sparkles size={16} style={{ color: '#3b82f6' }} />
-              <span style={{ fontSize: '0.875rem', color: '#93c5fd' }}>Open to AI/ML Engineering Roles</span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.25rem', background: 'rgba(139, 92, 246, 0.1)', borderRadius: '9999px', border: '1px solid rgba(139, 92, 246, 0.3)', marginBottom: '2rem' }}>
+              <Sparkles size={16} style={{ color: '#8b5cf6' }} />
+              <span style={{ fontSize: '0.875rem', color: '#c4b5fd' }}>Open to AI/ML Engineering Roles</span>
             </div>
             
             <h1 style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: '1.5rem', lineHeight: '1.1', letterSpacing: '-0.02em' }}>
               AI Engineer Building
               <br />
               <span style={{ 
-                background: 'linear-gradient(135deg, #3b82f6 0%, #10b981 50%, #f59e0b 100%)', 
+                background: 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #10b981 100%)', 
                 WebkitBackgroundClip: 'text', 
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '200% 200%',
                 animation: 'gradient 3s ease infinite'
               }}>
-                Production ML Systems
+                Production AI Systems
               </span>
             </h1>
             
             <p style={{ fontSize: '1.25rem', color: '#9ca3af', maxWidth: '800px', margin: '0 auto 1rem', lineHeight: '1.8' }}>
-              Specializing in <span style={{ color: '#3b82f6', fontWeight: '600' }}>deep learning</span>, <span style={{ color: '#10b981', fontWeight: '600' }}>computer vision</span>, and <span style={{ color: '#f59e0b', fontWeight: '600' }}>LLM systems</span>
+              Specializing in <span style={{ color: '#8b5cf6', fontWeight: '600' }}>agentic AI</span>, <span style={{ color: '#3b82f6', fontWeight: '600' }}>LLM systems</span>, and <span style={{ color: '#10b981', fontWeight: '600' }}>cloud deployment</span>
             </p>
             
             <p style={{ fontSize: '1rem', color: '#6b7280', maxWidth: '700px', margin: '0 auto 3rem', lineHeight: '1.75' }}>
-              Proven track record with 99.94% accuracy medical AI, 204% returns RL trading bot, and production RAG systems. Experienced with MLOps, Docker, and full-stack deployment.
+              Built production AI agent on Google Cloud Run, 99.94% accuracy medical AI, 204% returns RL trading bot, and enterprise RAG systems. Experienced with Google ADK, Docker, FastAPI, and comprehensive testing.
             </p>
 
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '2rem' }}>
@@ -186,13 +214,13 @@ export default function Portfolio() {
                  rel="noopener noreferrer"
                  style={{ 
                    padding: '1rem 2rem', 
-                   background: 'linear-gradient(135deg, #3b82f6, #10b981)', 
+                   background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)', 
                    borderRadius: '0.75rem', 
                    fontWeight: '600', 
                    textDecoration: 'none', 
                    color: '#fff', 
                    transition: 'all 0.3s',
-                   boxShadow: '0 10px 40px rgba(59, 130, 246, 0.3)',
+                   boxShadow: '0 10px 40px rgba(139, 92, 246, 0.3)',
                    display: 'flex',
                    alignItems: 'center',
                    gap: '0.5rem'
@@ -227,7 +255,7 @@ export default function Portfolio() {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5rem' }}>
-            <ChevronDown size={32} style={{ color: '#3b82f6', animation: 'bounce 2s infinite' }} />
+            <ChevronDown size={32} style={{ color: '#8b5cf6', animation: 'bounce 2s infinite' }} />
           </div>
         </div>
       </section>
@@ -240,7 +268,7 @@ export default function Portfolio() {
               Featured Projects
             </h2>
             <p style={{ fontSize: '1.125rem', color: '#9ca3af', maxWidth: '700px', margin: '0 auto' }}>
-              Production-ready AI systems demonstrating end-to-end ML engineering expertise
+              Production-ready AI systems from agentic tools to deep learning pipelines
             </p>
           </div>
 
@@ -302,7 +330,7 @@ export default function Portfolio() {
             Open to remote AI/ML engineering opportunities
           </p>
           <p style={{ fontSize: '1rem', color: '#6b7280', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
-            Looking for roles where I can apply deep learning, MLOps, and production engineering to solve real-world problems.
+            Looking for roles where I can apply agentic AI, LLM systems, MLOps, and cloud deployment to solve real-world problems.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
@@ -324,7 +352,7 @@ export default function Portfolio() {
             />
           </div>
 
-          <div style={{ padding: '2rem', background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRadius: '1rem', maxWidth: '500px', margin: '0 auto' }}>
+          <div style={{ padding: '2rem', background: 'rgba(139, 92, 246, 0.05)', border: '1px solid rgba(139, 92, 246, 0.2)', borderRadius: '1rem', maxWidth: '500px', margin: '0 auto' }}>
             <p style={{ color: '#9ca3af', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Currently pursuing</p>
             <p style={{ fontSize: '1.125rem', fontWeight: '600', color: '#fff' }}>B.Tech CSE, Bennett University</p>
             <p style={{ color: '#6b7280', fontSize: '0.875rem', marginTop: '0.5rem' }}>Expected Graduation: 2027</p>
@@ -372,9 +400,31 @@ function ProjectCard({ project }) {
         border: `1px solid ${isHovered ? project.color + '40' : 'rgba(255, 255, 255, 0.05)'}`,
         transition: 'all 0.4s ease',
         transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
-        boxShadow: isHovered ? `0 20px 60px ${project.color}20` : 'none'
+        boxShadow: isHovered ? `0 20px 60px ${project.color}20` : 'none',
+        position: 'relative'
       }}
     >
+      {project.featured && (
+        <div style={{ 
+          position: 'absolute', 
+          top: '-12px', 
+          right: '20px', 
+          padding: '0.375rem 1rem', 
+          background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)',
+          borderRadius: '9999px',
+          fontSize: '0.75rem',
+          fontWeight: '600',
+          color: '#fff',
+          boxShadow: '0 4px 12px rgba(139, 92, 246, 0.4)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.375rem'
+        }}>
+          <Cloud size={14} />
+          PRODUCTION
+        </div>
+      )}
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
         <div style={{ 
           padding: '1rem', 
@@ -434,11 +484,11 @@ function ExperienceCard({ exp }) {
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.5rem' }}>
         <div>
-          <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.3)', borderRadius: '0.5rem', marginBottom: '0.75rem' }}>
-            <span style={{ fontSize: '0.75rem', color: '#93c5fd', fontWeight: '600' }}>{exp.type}</span>
+          <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(139, 92, 246, 0.1)', border: '1px solid rgba(139, 92, 246, 0.3)', borderRadius: '0.5rem', marginBottom: '0.75rem' }}>
+            <span style={{ fontSize: '0.75rem', color: '#c4b5fd', fontWeight: '600' }}>{exp.type}</span>
           </div>
           <h3 style={{ fontSize: '1.375rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{exp.title}</h3>
-          <p style={{ color: '#3b82f6', fontWeight: '600' }}>{exp.org}</p>
+          <p style={{ color: '#8b5cf6', fontWeight: '600' }}>{exp.org}</p>
         </div>
         <span style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: '500' }}>{exp.period}</span>
       </div>
@@ -501,7 +551,7 @@ function SocialLink({ href, icon: Icon }) {
         border: '1px solid rgba(255, 255, 255, 0.1)'
       }}
     >
-      <Icon size={22} style={{ color: isHovered ? '#3b82f6' : '#9ca3af' }} />
+      <Icon size={22} style={{ color: isHovered ? '#8b5cf6' : '#9ca3af' }} />
     </a>
   );
 }
@@ -543,7 +593,7 @@ function ContactButton({ href, icon: Icon, text, primary }) {
       style={{ 
         padding: '1rem 2rem',
         background: primary 
-          ? (isHovered ? 'linear-gradient(135deg, #2563eb, #059669)' : 'linear-gradient(135deg, #3b82f6, #10b981)')
+          ? (isHovered ? 'linear-gradient(135deg, #7c3aed, #2563eb)' : 'linear-gradient(135deg, #8b5cf6, #3b82f6)')
           : (isHovered ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)'),
         border: primary ? 'none' : '1px solid rgba(255, 255, 255, 0.2)',
         borderRadius: '0.75rem', 
@@ -554,7 +604,7 @@ function ContactButton({ href, icon: Icon, text, primary }) {
         alignItems: 'center', 
         gap: '0.5rem',
         transition: 'all 0.3s',
-        boxShadow: primary && isHovered ? '0 10px 40px rgba(59, 130, 246, 0.3)' : 'none'
+        boxShadow: primary && isHovered ? '0 10px 40px rgba(139, 92, 246, 0.3)' : 'none'
       }}
     >
       <Icon size={20} />
