@@ -201,11 +201,11 @@ export default function Portfolio() {
             </h1>
             
             <p style={{ fontSize: '1.25rem', color: '#9ca3af', maxWidth: '800px', margin: '0 auto 1rem', lineHeight: '1.8' }}>
-              Specializing in <span style={{ color: '#8b5cf6', fontWeight: '600' }}>agentic AI</span>, <span style={{ color: '#3b82f6', fontWeight: '600' }}>LLM systems</span>, and <span style={{ color: '#10b981', fontWeight: '600' }}>cloud deployment</span>
+              Specializing in <span style={{ color: '#8b5cf6', fontWeight: '600' }}>agentic AI</span>, <span style={{ color: '#3b82f6', fontWeight: '600' }}>LLM systems</span>, and <span style={{ color: '#10b981', fontWeight: '600' }}>Deep Learning</span>
             </p>
             
             <p style={{ fontSize: '1rem', color: '#6b7280', maxWidth: '700px', margin: '0 auto 3rem', lineHeight: '1.75' }}>
-              Built production AI agent on Google Cloud Run, 99.94% accuracy medical AI, 204% returns RL trading bot, and enterprise RAG systems. Experienced with Google ADK, Docker, FastAPI, and comprehensive testing.
+              Built production AI agent on Google Cloud Run, 99.94% accuracy medical AI, 204% returns RL trading bot, enterprise RAG systems and end-to-end Deep Learning Applications.
             </p>
 
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '2rem' }}>
