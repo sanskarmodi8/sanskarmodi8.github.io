@@ -68,6 +68,3 @@ Deployed on Hugging Face Spaces.
 - Email: mailto:sansyprog8@gmail.com  
 - Kaggle: https://www.kaggle.com/sanskarmodi8  
 
----
-
-*I care about building systems that work in practice — not just collecting stars or streaks.*
