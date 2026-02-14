@@ -4,7 +4,7 @@
 
 AI Engineer focused on building **production-grade machine learning systems** — from deep learning models to deployable APIs and evaluation pipelines.
 
-I primarily work with **PyTorch**, and my interests include **computer vision, reinforcement learning, and LLM-based systems**.
+I primarily work with **PyTorch**, and my interests include **computer vision, reinforcement learning, Agentic AI and LLM-based systems**.
 
 🌐 **Portfolio:** https://sanskarmodi8.github.io  
 
