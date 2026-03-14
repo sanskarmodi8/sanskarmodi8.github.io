@@ -250,7 +250,7 @@ export default function Portfolio() {
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
               <SocialLink href="https://github.com/sanskarmodi8" icon={Github} />
               <SocialLink href="https://www.linkedin.com/in/sanskar-modi-ba53a2267/" icon={Linkedin} />
-              <SocialLink href="mailto:sansyprog8@gmail.com" icon={Mail} />
+              <SocialLink href="mailto:sanskarmodi.dev@gmail.com" icon={Mail} />
             </div>
           </div>
 
@@ -335,7 +335,7 @@ export default function Portfolio() {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
             <ContactButton 
-              href="mailto:sansyprog8@gmail.com" 
+              href="mailto:sanskarmodi.dev@gmail.com" 
               icon={Mail}
               text="Email Me"
               primary
